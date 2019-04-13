@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SwiftParamTest_Example' do
+  pod 'SwiftParamTest', :path => '../'
+
+  target 'SwiftParamTest_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
