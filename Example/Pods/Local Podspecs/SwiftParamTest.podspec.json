@@ -1,0 +1,22 @@
+{
+  "name": "SwiftParamTest",
+  "version": "0.1.0",
+  "summary": "A short description of SwiftParamTest.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/tobi462@gmail.com/SwiftParamTest",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "tobi462@gmail.com": "tobi462@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/tobi462@gmail.com/SwiftParamTest.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SwiftParamTest/Classes/**/*"
+}

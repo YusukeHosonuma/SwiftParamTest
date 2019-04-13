@@ -1,0 +1,6 @@
+framework module SwiftParamTest {
+  umbrella header "SwiftParamTest-umbrella.h"
+
+  export *
+  module * { export * }
+}

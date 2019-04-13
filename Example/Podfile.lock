@@ -1,0 +1,16 @@
+PODS:
+  - SwiftParamTest (0.1.0)
+
+DEPENDENCIES:
+  - SwiftParamTest (from `../`)
+
+EXTERNAL SOURCES:
+  SwiftParamTest:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SwiftParamTest: 90cf6775aaab8c2d6e2f89e428b94918318a4d16
+
+PODFILE CHECKSUM: e6c577f10d8fc72ed0f6016c82bf0d8d61554390
+
+COCOAPODS: 1.5.3
