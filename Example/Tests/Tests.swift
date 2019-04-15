@@ -1,6 +1,10 @@
 import XCTest
 import SwiftParamTest
 
+func fizzBuzz(_ x: Int) -> String {
+    return "\(x)"
+}
+
 class Tests: XCTestCase {
     
     override func setUp() {
@@ -12,17 +16,15 @@ class Tests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+
+    func testFizzBuzz() {
+        Expect(f: fizzBuzz).forAll([
+            when(1, then: "1"),
+            when(2, then: "2"),
+            when(3, then: "Fizz"),
+            when(4, then: "4"),
+            when(5, then: "Buzz"),
+            when(6, then: "6"),
+        ])
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure() {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }

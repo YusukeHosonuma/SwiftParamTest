@@ -42,11 +42,12 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		69E6A1E2B73AE7C4D736DBF8 /* Pods_SwiftParamTest_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftParamTest_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DD862F3EABB53048700A2A0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		7DD862F3EABB53048700A2A0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		992974A4DBCAC2B085401C7B /* Pods-SwiftParamTest_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftParamTest_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftParamTest_Example/Pods-SwiftParamTest_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A1B4EDF2003C771C652746E8 /* Pods-SwiftParamTest_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftParamTest_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftParamTest_Tests/Pods-SwiftParamTest_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		B6DE5332AD6F068771876AD9 /* SwiftParamTest.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = SwiftParamTest.podspec; path = ../SwiftParamTest.podspec; sourceTree = "<group>"; };
-		E8783EC994E4CF244CC3186A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		B6DE5332AD6F068771876AD9 /* SwiftParamTest.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SwiftParamTest.podspec; path = ../SwiftParamTest.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E540CE3622645ADA00CE4D33 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E8783EC994E4CF244CC3186A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +143,7 @@
 		848A0FB8FFE30C80499E337B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E540CE3622645ADA00CE4D33 /* XCTest.framework */,
 				69E6A1E2B73AE7C4D736DBF8 /* Pods_SwiftParamTest_Example.framework */,
 				455B99C7B64BC6FFBF76F8E8 /* Pods_SwiftParamTest_Tests.framework */,
 			);
@@ -226,6 +228,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -313,7 +316,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftParamTest_Example/Pods-SwiftParamTest_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftParamTest_Example/Pods-SwiftParamTest_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SwiftParamTest/SwiftParamTest.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -324,7 +327,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftParamTest_Example/Pods-SwiftParamTest_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftParamTest_Example/Pods-SwiftParamTest_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
