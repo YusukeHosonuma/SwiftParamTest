@@ -7,7 +7,7 @@
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+![Screenshot](https://raw.githubusercontent.com/YusukeHosonuma/SwiftParamTest/master/screenshot.png)
 
 ## Requirements
 
@@ -22,7 +22,7 @@ pod 'SwiftParamTest'
 
 ## Author
 
-tobi462@gmail.com, tobi462@gmail.com
+Yusuke Hosonuma / tobi462@gmail.com
 
 ## License
 
