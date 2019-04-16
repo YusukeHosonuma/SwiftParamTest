@@ -6,19 +6,8 @@ func fizzBuzz(_ x: Int) -> String {
 }
 
 class Tests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
     func testFizzBuzz() {
-        Expect(f: fizzBuzz).forAll([
+        assert(fizzBuzz).forAll([
             when(1, then: "1"),
             when(2, then: "2"),
             when(3, then: "Fizz"),
@@ -28,3 +17,6 @@ class Tests: XCTestCase {
         ])
     }
 }
+
+
+
