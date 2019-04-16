@@ -10,13 +10,10 @@ class Tests: XCTestCase {
         assert(fizzBuzz).forAll([
             when(1, then: "1"),
             when(2, then: "2"),
-            when(3, then: "Fizz"),
+            when(3, then: "Fizz"), // failed example
             when(4, then: "4"),
-            when(5, then: "Buzz"),
+            when(5, then: "Buzz"), // failed example
             when(6, then: "6"),
         ])
     }
 }
-
-
-
