@@ -28,7 +28,7 @@ Parameterized test for Swift with XCTest.
   s.source           = { :git => 'https://github.com/YusukeHosonuma/SwiftParamTest.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/tobi462'
 
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '9.3'
 
   s.source_files = 'SwiftParamTest/Classes/**/*'
 

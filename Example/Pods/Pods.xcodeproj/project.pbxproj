@@ -9,16 +9,16 @@
 /* Begin PBXBuildFile section */
 		0405F71768A5CF178BA01A9E38F16F56 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE92ABC2F7B9A21F56722990F2D34E1 /* Foundation.framework */; };
 		2F82D614E62F2E198EEE844AD4E99B61 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE92ABC2F7B9A21F56722990F2D34E1 /* Foundation.framework */; };
+		326F458BAF3FF8F43BA5ACFF7209CD0C /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA73DE52B46185FE583AD08C91489F2 /* Core.swift */; };
 		338E6387F61DF6D02007E17FD161EDD4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE92ABC2F7B9A21F56722990F2D34E1 /* Foundation.framework */; };
 		45FD42A7D2DABC107DDE11D3CF99236E /* Pods-SwiftParamTest_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A787F209398F4C2676EDB60FFB10BF2 /* Pods-SwiftParamTest_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4F0D6CFF9F1581B60870067E9C586F5A /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB5943702672208A0DE4D9AB8D79CE /* DSL.swift */; };
 		60812CA31A90321CC8C7D9F06D59CE0E /* Pods-SwiftParamTest_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD260B0BBF48BD026AC6CA39F666347 /* Pods-SwiftParamTest_Tests-dummy.m */; };
 		64697BC8798D6A9A55A062B04C1C6837 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD98DB8C1AA8E2390412D61DB64864D /* XCTest.framework */; };
+		69727C5F94D54FA4A92A517B46D9D90A /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8015F078B8546AD543A8A0D090DCE79 /* DSL.swift */; };
 		721D9A836A1BB4D6D4E19394F8D601BD /* Pods-SwiftParamTest_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C5FA65EB2A3122E46B2E4978826252 /* Pods-SwiftParamTest_Example-dummy.m */; };
-		7FFF6617F838CEC184D615AE4437A80F /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1F30CD38CFDBEF5103E9787750DB0 /* Core.swift */; };
 		B55AFD88C0D3D7E20D967F2B92E0992F /* Pods-SwiftParamTest_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CD0D02CB792A41630896C45C872A45D /* Pods-SwiftParamTest_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B778E13E46C25FA0D69292221397A50F /* SwiftParamTest-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 36DC739F74D763AA448031878544D4FE /* SwiftParamTest-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BA614E71F3E4458BA3FA35C8D780EE15 /* SwiftParamTest-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D438E8B22F0DD32DC1F454A5FDF38BE6 /* SwiftParamTest-dummy.m */; };
+		B778E13E46C25FA0D69292221397A50F /* SwiftParamTest-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B9B01E531196D8E8BC022F213B88CBE /* SwiftParamTest-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E21DCA0E3BE049BF764030AE0C21A11E /* SwiftParamTest-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC2520B01B906F78581B8491693358A /* SwiftParamTest-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,40 +39,40 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1820C085036B7BA67AFB694720BAFBDD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		07E4DCDC49B9ED29180D61ECF7CF53C0 /* SwiftParamTest.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftParamTest.modulemap; sourceTree = "<group>"; };
 		1A787F209398F4C2676EDB60FFB10BF2 /* Pods-SwiftParamTest_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftParamTest_Tests-umbrella.h"; sourceTree = "<group>"; };
 		2B2FD5BEEC6EE99401518EC767359E95 /* Pods-SwiftParamTest_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftParamTest_Example.modulemap"; sourceTree = "<group>"; };
 		301AEA06855FE153B77CE30B0125F31E /* Pods-SwiftParamTest_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftParamTest_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		36DC739F74D763AA448031878544D4FE /* SwiftParamTest-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftParamTest-umbrella.h"; sourceTree = "<group>"; };
 		3CD0D02CB792A41630896C45C872A45D /* Pods-SwiftParamTest_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftParamTest_Example-umbrella.h"; sourceTree = "<group>"; };
-		4FFB5943702672208A0DE4D9AB8D79CE /* DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DSL.swift; path = SwiftParamTest/Classes/DSL.swift; sourceTree = "<group>"; };
+		519276845A4A49D4D543A12EE824C1FC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		5B9B01E531196D8E8BC022F213B88CBE /* SwiftParamTest-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftParamTest-umbrella.h"; sourceTree = "<group>"; };
 		5BE861442B2577C5373F03DFCE4CEC25 /* Pods-SwiftParamTest_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftParamTest_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5CC2520B01B906F78581B8491693358A /* SwiftParamTest-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftParamTest-dummy.m"; sourceTree = "<group>"; };
 		601F2F052CDB1415E96E964C69232F25 /* Pods-SwiftParamTest_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftParamTest_Example.release.xcconfig"; sourceTree = "<group>"; };
-		695EDA3058A285185D7B5B670E71B657 /* SwiftParamTest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftParamTest.xcconfig; sourceTree = "<group>"; };
 		6FD260B0BBF48BD026AC6CA39F666347 /* Pods-SwiftParamTest_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftParamTest_Tests-dummy.m"; sourceTree = "<group>"; };
 		6FD98DB8C1AA8E2390412D61DB64864D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		844A11474DA5D8C29DB56EEEECD778EE /* SwiftParamTest-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftParamTest-Info.plist"; sourceTree = "<group>"; };
-		89198C4CD884A6DDE59B7EBABFD6C281 /* SwiftParamTest-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftParamTest-prefix.pch"; sourceTree = "<group>"; };
+		7FA73DE52B46185FE583AD08C91489F2 /* Core.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Core.swift; path = SwiftParamTest/Classes/Core.swift; sourceTree = "<group>"; };
 		8A5C8C04F1701EDBA5704428B1A490BA /* Pods-SwiftParamTest_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftParamTest_Tests-Info.plist"; sourceTree = "<group>"; };
 		8CBE6CD185C7FC45B17A304DBA99645C /* Pods-SwiftParamTest_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftParamTest_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		93E4D4606086D7BEF612F77C4379B044 /* Pods_SwiftParamTest_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftParamTest_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		951BEDBEC7EF2EB1F4F6AD11BF6B3DEE /* SwiftParamTest.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SwiftParamTest.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9A040DB5A8AE201D60AD3AECED73FDA0 /* Pods_SwiftParamTest_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftParamTest_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93E4D4606086D7BEF612F77C4379B044 /* Pods_SwiftParamTest_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftParamTest_Example.framework; path = "Pods-SwiftParamTest_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94FAE9076B5D99B726B5016A44FEFBBD /* SwiftParamTest-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftParamTest-Info.plist"; sourceTree = "<group>"; };
+		9A040DB5A8AE201D60AD3AECED73FDA0 /* Pods_SwiftParamTest_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftParamTest_Tests.framework; path = "Pods-SwiftParamTest_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A4BA9AFDD765B7A657E0EF5B12C9A45 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		9BB75AD075495802767999018CEC0758 /* SwiftParamTest.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SwiftParamTest.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A6EF5815289E8ACCCBD04084B1B9141A /* Pods-SwiftParamTest_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftParamTest_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A71113F393688F5AD6A53CBC20B2D4D9 /* SwiftParamTest-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftParamTest-prefix.pch"; sourceTree = "<group>"; };
+		A8015F078B8546AD543A8A0D090DCE79 /* DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DSL.swift; path = SwiftParamTest/Classes/DSL.swift; sourceTree = "<group>"; };
+		A8260ADC10C2B843BFFDD5F363B7A761 /* SwiftParamTest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftParamTest.xcconfig; sourceTree = "<group>"; };
 		AA8F48153EDE90D04497B8516C4EE920 /* Pods-SwiftParamTest_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftParamTest_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B2D45F33CB21A2D3CC58913E10EBA087 /* Pods-SwiftParamTest_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftParamTest_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BB0F6B53BE4E8DC0E69E8EEF1313D4EB /* Pods-SwiftParamTest_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftParamTest_Tests.modulemap"; sourceTree = "<group>"; };
-		C0F1F30CD38CFDBEF5103E9787750DB0 /* Core.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Core.swift; path = SwiftParamTest/Classes/Core.swift; sourceTree = "<group>"; };
 		C682D19CF5CD0AC3736F6F0CA90CC603 /* Pods-SwiftParamTest_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftParamTest_Example-Info.plist"; sourceTree = "<group>"; };
 		C903465A5776D6568FB386BD44F8203B /* Pods-SwiftParamTest_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftParamTest_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		CDE92ABC2F7B9A21F56722990F2D34E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CFF668898F5B978E7EE2F781D0C49E8A /* Pods-SwiftParamTest_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftParamTest_Example-frameworks.sh"; sourceTree = "<group>"; };
-		D0388BB2E1E7896965AD11E3AC1882A4 /* SwiftParamTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftParamTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D438E8B22F0DD32DC1F454A5FDF38BE6 /* SwiftParamTest-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftParamTest-dummy.m"; sourceTree = "<group>"; };
-		DDC50FD382FB6ABE849C0EBC01EF1F6A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		D0388BB2E1E7896965AD11E3AC1882A4 /* SwiftParamTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftParamTest.framework; path = SwiftParamTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C5FA65EB2A3122E46B2E4978826252 /* Pods-SwiftParamTest_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftParamTest_Example-dummy.m"; sourceTree = "<group>"; };
-		FF817C6EE0E23736634A3FEAA24F6853 /* SwiftParamTest.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftParamTest.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +139,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		17F7F507E64DED90482F4C08FFBF13F9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				07E4DCDC49B9ED29180D61ECF7CF53C0 /* SwiftParamTest.modulemap */,
+				A8260ADC10C2B843BFFDD5F363B7A761 /* SwiftParamTest.xcconfig */,
+				5CC2520B01B906F78581B8491693358A /* SwiftParamTest-dummy.m */,
+				94FAE9076B5D99B726B5016A44FEFBBD /* SwiftParamTest-Info.plist */,
+				A71113F393688F5AD6A53CBC20B2D4D9 /* SwiftParamTest-prefix.pch */,
+				5B9B01E531196D8E8BC022F213B88CBE /* SwiftParamTest-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/SwiftParamTest";
+			sourceTree = "<group>";
+		};
+		3AD8FEACFEAA2F682DD9844B4CB7E036 /* SwiftParamTest */ = {
+			isa = PBXGroup;
+			children = (
+				7FA73DE52B46185FE583AD08C91489F2 /* Core.swift */,
+				A8015F078B8546AD543A8A0D090DCE79 /* DSL.swift */,
+				CF83E68AD0BA32AD1F294D586B9262C4 /* Pod */,
+				17F7F507E64DED90482F4C08FFBF13F9 /* Support Files */,
+			);
+			name = SwiftParamTest;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		8AA9CA5373338AB9A5119991DC9C426D /* Pods-SwiftParamTest_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,18 +190,6 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		A5F9651D3835A9B79FE3372C78FD90AF /* SwiftParamTest */ = {
-			isa = PBXGroup;
-			children = (
-				C0F1F30CD38CFDBEF5103E9787750DB0 /* Core.swift */,
-				4FFB5943702672208A0DE4D9AB8D79CE /* DSL.swift */,
-				CAE9D1B99AFA2F107361A0D030DEC9B9 /* Pod */,
-				E005FA2575DB0B38A52E22F3CFE00434 /* Support Files */,
-			);
-			name = SwiftParamTest;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		B4A20DE51C57CCE6549A26D79F664F86 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,16 +197,6 @@
 				6FD98DB8C1AA8E2390412D61DB64864D /* XCTest.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		CAE9D1B99AFA2F107361A0D030DEC9B9 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				DDC50FD382FB6ABE849C0EBC01EF1F6A /* LICENSE */,
-				1820C085036B7BA67AFB694720BAFBDD /* README.md */,
-				951BEDBEC7EF2EB1F4F6AD11BF6B3DEE /* SwiftParamTest.podspec */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -206,26 +210,22 @@
 			);
 			sourceTree = "<group>";
 		};
+		CF83E68AD0BA32AD1F294D586B9262C4 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				519276845A4A49D4D543A12EE824C1FC /* LICENSE */,
+				9A4BA9AFDD765B7A657E0EF5B12C9A45 /* README.md */,
+				9BB75AD075495802767999018CEC0758 /* SwiftParamTest.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
 		D98EB993A6AD6CEA0E96A34C33A18489 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A5F9651D3835A9B79FE3372C78FD90AF /* SwiftParamTest */,
+				3AD8FEACFEAA2F682DD9844B4CB7E036 /* SwiftParamTest */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		E005FA2575DB0B38A52E22F3CFE00434 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				FF817C6EE0E23736634A3FEAA24F6853 /* SwiftParamTest.modulemap */,
-				695EDA3058A285185D7B5B670E71B657 /* SwiftParamTest.xcconfig */,
-				D438E8B22F0DD32DC1F454A5FDF38BE6 /* SwiftParamTest-dummy.m */,
-				844A11474DA5D8C29DB56EEEECD778EE /* SwiftParamTest-Info.plist */,
-				89198C4CD884A6DDE59B7EBABFD6C281 /* SwiftParamTest-prefix.pch */,
-				36DC739F74D763AA448031878544D4FE /* SwiftParamTest-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/SwiftParamTest";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,7 +282,7 @@
 			buildConfigurationList = 241CDE2383F6544D43D74A510AEF8C61 /* Build configuration list for PBXNativeTarget "SwiftParamTest" */;
 			buildPhases = (
 				75FF7514EA5AF6980F4A83A5E505E818 /* Headers */,
-				0A02201DEBB77431FCEB0A7CB0C4EFD0 /* Sources */,
+				F0E03C366829C8C75AD9F20FC4016835 /* Sources */,
 				C3A79B69C5736C98DE0F8D6A511E915D /* Frameworks */,
 				5235E75683A559945D78F6397BAC7032 /* Resources */,
 			);
@@ -328,7 +328,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
@@ -368,21 +367,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0A02201DEBB77431FCEB0A7CB0C4EFD0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7FFF6617F838CEC184D615AE4437A80F /* Core.swift in Sources */,
-				4F0D6CFF9F1581B60870067E9C586F5A /* DSL.swift in Sources */,
-				BA614E71F3E4458BA3FA35C8D780EE15 /* SwiftParamTest-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		25100A07BA14193B54A49387C0787CC8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				721D9A836A1BB4D6D4E19394F8D601BD /* Pods-SwiftParamTest_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0E03C366829C8C75AD9F20FC4016835 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				326F458BAF3FF8F43BA5ACFF7209CD0C /* Core.swift in Sources */,
+				69727C5F94D54FA4A92A517B46D9D90A /* DSL.swift in Sources */,
+				E21DCA0E3BE049BF764030AE0C21A11E /* SwiftParamTest-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +443,38 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		53C617C2E36910DDB312C7E04103DC9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8260ADC10C2B843BFFDD5F363B7A761 /* SwiftParamTest.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftParamTest/SwiftParamTest-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftParamTest/SwiftParamTest-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftParamTest/SwiftParamTest.modulemap";
+				PRODUCT_MODULE_NAME = SwiftParamTest;
+				PRODUCT_NAME = SwiftParamTest;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		6242E7A6CAC19CE48F6DD1B089815467 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -513,9 +544,9 @@
 			};
 			name = Release;
 		};
-		9F246B8BC745F913121B7E95528DE99C /* Debug */ = {
+		96F3D605CB0BB4E4EBEFCE21A99CD4CC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 695EDA3058A285185D7B5B670E71B657 /* SwiftParamTest.xcconfig */;
+			baseConfigurationReference = A8260ADC10C2B843BFFDD5F363B7A761 /* SwiftParamTest.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -529,7 +560,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftParamTest/SwiftParamTest-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftParamTest/SwiftParamTest-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SwiftParamTest/SwiftParamTest.modulemap";
 				PRODUCT_MODULE_NAME = SwiftParamTest;
@@ -537,7 +568,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -694,41 +725,10 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		FEDCD2824618CB7F90679F9D86820BBB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 695EDA3058A285185D7B5B670E71B657 /* SwiftParamTest.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftParamTest/SwiftParamTest-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftParamTest/SwiftParamTest-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftParamTest/SwiftParamTest.modulemap";
-				PRODUCT_MODULE_NAME = SwiftParamTest;
-				PRODUCT_NAME = SwiftParamTest;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -738,8 +738,8 @@
 		241CDE2383F6544D43D74A510AEF8C61 /* Build configuration list for PBXNativeTarget "SwiftParamTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9F246B8BC745F913121B7E95528DE99C /* Debug */,
-				FEDCD2824618CB7F90679F9D86820BBB /* Release */,
+				96F3D605CB0BB4E4EBEFCE21A99CD4CC /* Debug */,
+				53C617C2E36910DDB312C7E04103DC9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
