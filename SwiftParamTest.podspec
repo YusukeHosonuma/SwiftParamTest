@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-Parameterized test for Swift.
+Parameterized test for Swift with XCTest.
                        DESC
 
   s.homepage         = 'https://github.com/YusukeHosonuma/SwiftParamTest'
@@ -28,7 +28,7 @@ Parameterized test for Swift.
   s.source           = { :git => 'https://github.com/YusukeHosonuma/SwiftParamTest.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/tobi462'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '11.0'
 
   s.source_files = 'SwiftParamTest/Classes/**/*'
 
@@ -39,4 +39,5 @@ Parameterized test for Swift.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'XCTest', 'Foundation'
   # s.dependency 'AFNetworking', '~> 2.3'
+  s.swift_version = '5.0'
 end
