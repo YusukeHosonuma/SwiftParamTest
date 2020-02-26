@@ -1,6 +1,0 @@
-framework module Pods_SwiftParamTest_Tests {
-  umbrella header "Pods-SwiftParamTest_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}
