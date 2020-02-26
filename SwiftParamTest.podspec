@@ -1,43 +1,35 @@
-#
-# Be sure to run `pod lib lint SwiftParamTest.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
+Pod::Spec.new do |spec|
+  spec.name         = "SwiftParamTest"
+  spec.version      = "0.1.0"
+  spec.summary      = "Parameterized test for Swift."
 
-Pod::Spec.new do |s|
-  s.name             = 'SwiftParamTest'
-  s.version          = '0.1.0'
-  s.summary          = 'Parameterized test for Swift.'
+  spec.description  = <<-DESC
+  Parameterized test for Swift with XCTest.
+  DESC
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  spec.homepage         = "https://github.com/YusukeHosonuma/SwiftParamTest"
+  spec.license          = { :type => 'MIT', :file => 'LICENSE' }
+  spec.authors          = { "Yusuke Hosonuma" => "tobi462@gmail.com" }
+  spec.social_media_url = "https://twitter.com/tobi462"
 
-  s.description      = <<-DESC
-Parameterized test for Swift with XCTest.
-                       DESC
+  spec.ios.deployment_target     = "9.3"
+  # spec.osx.deployment_target     = "9.3"
+  # spec.watchos.deployment_target = "9.3"
+  # spec.tvos.deployment_target    = "9.3"
 
-  s.homepage         = 'https://github.com/YusukeHosonuma/SwiftParamTest'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Yusuke Hosonuma' => 'tobi462@gmail.com' }
-  s.source           = { :git => 'https://github.com/YusukeHosonuma/SwiftParamTest.git', :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/tobi462'
+  spec.source = { :git => "https://github.com/YusukeHosonuma/SwiftParamTest.git", :tag => "#{spec.version}" }
 
-  s.ios.deployment_target = '9.3'
+  spec.source_files  = "Sources/**/*.{swift}"
 
-  s.source_files = 'SwiftParamTest/Classes/**/*'
+  spec.framework = "XCTest"
+  spec.user_target_xcconfig = {
+    'LIBRARY_SEARCH_PATHS' => '$(PLATFORM_DIR)/Developer/usr/lib',
+  }
+  spec.pod_target_xcconfig = {
+    'APPLICATION_EXTENSION_API_ONLY' => 'YES',
+    'ENABLE_BITCODE' => 'NO',
+    'OTHER_LDFLAGS' => '$(inherited) -Xlinker -no_application_extension -weak_framework XCTEST -weak-lXCTestSwiftSupport',
+  }
 
-  # s.resource_bundles = {
-  #   'SwiftParamTest' => ['SwiftParamTest/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  s.frameworks = 'XCTest', 'Foundation'
-  # s.dependency 'AFNetworking', '~> 2.3'
-  s.swift_version = '4.2'
+  spec.swift_version = "5.1"
 end

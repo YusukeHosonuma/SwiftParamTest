@@ -1,11 +1,10 @@
-use_frameworks!
+platform :ios, '13.0'
 
-target 'SwiftParamTest_Example' do
-  pod 'SwiftParamTest', :path => '../'
+target 'Example' do
+  use_frameworks!
 
-  target 'SwiftParamTest_Tests' do
+  target 'ExampleTests' do
     inherit! :search_paths
-
-    
+    pod "SwiftParamTest", :path => "../"
   end
 end
