@@ -30,6 +30,14 @@ dependencies: [
 ]
 ```
 
+### Carthage
+
+Cartfile.private:
+
+```text
+github "YusukeHosonuma/SwiftParamTest"
+```
+
 ## Author
 
 Yusuke Hosonuma / tobi462@gmail.com
