@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		E55DBAB2240916C3009D5C20 /* DSLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55DBAB1240916C3009D5C20 /* DSLTests.swift */; };
 		OBJ_29 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_8 /* Core.swift */; };
 		OBJ_30 /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* DSL.swift */; };
 		OBJ_37 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E55DBAB1240916C3009D5C20 /* DSLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLTests.swift; sourceTree = "<group>"; };
 		E5A0684B2407B00800FF06E4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		OBJ_11 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		OBJ_15 /* Example */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Example; sourceTree = SOURCE_ROOT; };
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_11 /* XCTestManifests.swift */,
+				E55DBAB1240916C3009D5C20 /* DSLTests.swift */,
 			);
 			path = Tests;
 			sourceTree = SOURCE_ROOT;
@@ -108,7 +111,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -126,7 +129,6 @@
 				OBJ_23 /* SwiftParamTest.podspec */,
 				E5A0684A2407B00700FF06E4 /* Frameworks */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -204,7 +206,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_12 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -240,6 +242,7 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_48 /* XCTestManifests.swift in Sources */,
+				E55DBAB2240916C3009D5C20 /* DSLTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,8 +266,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				ENABLE_TESTABILITY = YES;
 				ENABLE_BITCODE = NO;
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
@@ -305,8 +308,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				ENABLE_TESTABILITY = YES;
 				ENABLE_BITCODE = NO;
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",

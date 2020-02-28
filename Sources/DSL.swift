@@ -8,7 +8,7 @@
 
 import XCTest
 
-public func assert<T, R: Equatable>(_ f: @escaping (T) -> R) -> Expect<T, R> {
+public func assert<T, R: Equatable>(to f: @escaping (T) -> R) -> Expect<T, R> {
     Expect(f: f)
 }
 

@@ -27,7 +27,7 @@ public struct Expect<T, R> where R: Equatable {
 }
 
 extension Expect {
-    public func forAll(_ rows: [Row<T, R>]) {
+    public func expect(_ rows: [Row<T, R>]) {
         for row in rows {
             let result = f(row.args)
             let message = "Expect to '\(row.expect)' but '\(result)'"
