@@ -1,0 +1,129 @@
+name: Release to CocoaPods
+
+on:
+  release:
+    types: [published]
+
+# -------------------------------------------------------------------
+# Workflow overview:
+# -------------------------------------------------------------------
+#
+#   unit-test ----------+
+#                       |---> deploy ------> slack-notify (always)
+#   integration-test ---+
+#
+# -------------------------------------------------------------------
+
+jobs:
+  unit-test:
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Run Unit Test
+      run: make test
+
+    - name: Write result
+      if: always()
+      run: echo ${{ job.status }} > job-result.txt
+
+    - name: Upload job result for job slack-notify
+      if: always()
+      uses: actions/upload-artifact@v1
+      with:
+        name: result
+        path: job-result.txt
+
+  integration-test:
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Cache bundler
+      uses: actions/cache@v1
+      with:
+        path: vendor/bundle
+        key: bundler-${{ hashFiles('Gemfile.lock') }}
+        restore-keys: bundler-${{ hashFiles('Gemfile.lock') }}
+
+    - name: Bundle install
+      run: bundle
+
+    - name: Run Integration Test
+      run: make integration-test
+
+    - name: Write result
+      if: always()
+      run: echo ${{ job.status }} > job-result.txt
+
+    - name: Upload job result for job slack-notify
+      if: always()
+      uses: actions/upload-artifact@v1
+      with:
+        name: result
+        path: job-result.txt
+
+  deploy:
+    runs-on: macos-latest
+    needs: [unit-test, integration-test]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Cache bundler
+      uses: actions/cache@v1
+      with:
+        path: vendor/bundle
+        key: bundler-${{ hashFiles('Gemfile.lock') }}
+        restore-keys: bundler-${{ hashFiles('Gemfile.lock') }}
+
+    - name: Setup
+      run: bundle
+
+    - name: Lint
+      run: make lint
+
+    - name: Deploy to CocoaPods
+      env:
+        COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+      run: make release
+
+    - name: Write result
+      if: always()
+      run: echo ${{ job.status }} > job-result.txt
+
+    - name: Upload job result for job slack-notify
+      if: always()
+      uses: actions/upload-artifact@v1
+      with:
+        name: result
+        path: job-result.txt
+
+  slack-notify:
+    runs-on: ubuntu-latest
+    needs: deploy
+    if: always()
+
+    steps:
+    - name: Download result for job slack-notify
+      uses: actions/download-artifact@v1
+      with:
+        name: result
+
+    - run: echo "::set-env name=JOB_RESULT::`cat ./result/job-result.txt`"
+
+    # Note:
+    # This action is run ubuntu only, because jobs are separated.
+    - name: Slack Notification
+      if: always()
+      uses: rtCamp/action-slack-notify@v2.0.0
+      env:
+        SLACK_CHANNEL: yhosonuma
+        SLACK_COLOR: ${{ (env.JOB_RESULT == 'success' && 'good') || 'danger' }}
+        SLACK_ICON: https://github.com/Penginmura.png?size=48
+        SLACK_MESSAGE: ${{ env.JOB_RESULT }}
+        SLACK_TITLE: Release
+        SLACK_USERNAME: Bot
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
