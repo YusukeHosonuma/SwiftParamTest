@@ -18,7 +18,24 @@ func fizzBuzz(_ x: Int) -> String {
     }
 }
 
+func indent(to target: String, size: Int) -> String {
+    String(repeating: " ", count: size) + target
+}
+
+struct Calculator {
+    var initialValue: Int
+
+    func add(_ n: Int) -> Int {
+        initialValue + n
+    }
+
+    func subtraction(_ n: Int) -> Int {
+        initialValue - n
+    }
+}
+
 class Tests: XCTestCase {
+    /// Example: test for single argument function
     func testFizzBuzz() {
         assert(fizzBuzz).forAll([
             when(1, then: "1"),
@@ -36,6 +53,41 @@ class Tests: XCTestCase {
             when(13, then: "13"),
             when(14, then: "14"),
             when(15, then: "FizzBuzz"),
+        ])
+    }
+
+    /// Example: test for two argument function
+    func testIndent() {
+        assert(indent).forAll([
+            when(("Hello", 0), then: "Hello"),
+            when(("Hello", 2), then: "  Hello"),
+            when(("Hello", 4), then: "    Hello"),
+        ])
+    }
+
+    /// Example: test for operator
+    func testOperator() {
+        assert(+).forAll([
+            when((1, 1), then: 2),
+            when((1, 2), then: 3),
+            when((2, 2), then: 4),
+        ])
+    }
+
+    /// Example: test for method of object
+    func testObject() {
+        let calc = Calculator(initialValue: 10)
+
+        assert(calc.add).forAll([
+            when(1, then: 11),
+            when(2, then: 12),
+            when(3, then: 13),
+        ])
+
+        assert(calc.subtraction).forAll([
+            when(1, then: 9),
+            when(2, then: 8),
+            when(3, then: 7),
         ])
     }
 }
