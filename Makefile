@@ -1,5 +1,5 @@
 EFAULT_GOAL := help
-HELP_INDENT := "10"
+HELP_INDENT := "20"
 
 # ref: https://postd.cc/auto-documented-makefile/
 .PHONY: help
@@ -30,3 +30,15 @@ lint: ## cocoapods - lint podspec
 .PHONY: release
 release: ## cocoapods - release
 	bundle exec pod trunk push SwiftParamTest.podspec
+
+.PHONY: info
+info: ## cocoapods - show trunk information
+	bundle exec pod trunk info SwiftParamTest
+
+.PHONY: integration-test
+integration-test: ## Integration test by Example app
+	cd ./Example && \
+	rm Podfile && \
+	mv Podfile_IntegrationTest Podfile && \
+	bundle exec pod update && \
+	bundle exec fastlane test
