@@ -1,8 +1,9 @@
 //
-//  Core.swift
-//  SwiftParamTest
+// Core.swift
+// SwiftParamTest
 //
-//  Created by Yusuke Hosonuma on 2019/04/15.
+// Created by Yusuke Hosonuma on 2020/02/28.
+// Copyright (c) 2020 Yusuke Hosonuma.
 //
 
 import XCTest
@@ -14,7 +15,7 @@ public struct Row<T, R> {
     var line: UInt
 
     init(when: T, expect: R, file: StaticString = #file, line: UInt = #line) {
-        self.args = when
+        args = when
         self.expect = expect
         self.file = file
         self.line = line
@@ -30,7 +31,7 @@ extension Expect {
         for row in rows {
             let result = f(row.args)
             let message = "Expect to '\(row.expect)' but '\(result)'"
-            XCTAssert(row.expect == result, message ,file: row.file, line: row.line)
+            XCTAssert(row.expect == result, message, file: row.file, line: row.line)
         }
     }
 }

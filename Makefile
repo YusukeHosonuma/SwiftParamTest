@@ -23,6 +23,10 @@ test: ## swift - test
 xcode: ## swift - generate xcode project
 	swift package generate-xcodeproj
 
+.PHONY: format
+format: ## format sources by SwiftFormat
+	swiftformat --config .swiftformat --header "\n{file}\nSwiftParamTest\n\nCreated by Yusuke Hosonuma on {created}.\nCopyright (c) {year} Yusuke Hosonuma.\n" .
+
 .PHONY: lint
 lint: ## cocoapods - lint podspec
 	bundle exec pod lib lint
