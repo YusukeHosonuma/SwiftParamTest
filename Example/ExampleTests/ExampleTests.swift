@@ -37,7 +37,7 @@ struct Calculator {
 class Tests: XCTestCase {
     /// Example: test for single argument function
     func testFizzBuzz() {
-        assert(fizzBuzz).forAll([
+        assert(to: fizzBuzz).expect([
             when(1, then: "1"),
             when(2, then: "2"),
             when(3, then: "Fizz"),
@@ -58,7 +58,7 @@ class Tests: XCTestCase {
 
     /// Example: test for two argument function
     func testIndent() {
-        assert(indent).forAll([
+        assert(to: indent).expect([
             when(("Hello", 0), then: "Hello"),
             when(("Hello", 2), then: "  Hello"),
             when(("Hello", 4), then: "    Hello"),
@@ -67,7 +67,7 @@ class Tests: XCTestCase {
 
     /// Example: test for operator
     func testOperator() {
-        assert(+).forAll([
+        assert(to: +).expect([
             when((1, 1), then: 2),
             when((1, 2), then: 3),
             when((2, 2), then: 4),
@@ -78,13 +78,13 @@ class Tests: XCTestCase {
     func testObject() {
         let calc = Calculator(initialValue: 10)
 
-        assert(calc.add).forAll([
+        assert(to: calc.add).expect([
             when(1, then: 11),
             when(2, then: 12),
             when(3, then: 13),
         ])
 
-        assert(calc.subtraction).forAll([
+        assert(to: calc.subtraction).expect([
             when(1, then: 9),
             when(2, then: 8),
             when(3, then: 7),
