@@ -15,3 +15,22 @@ jobs:
 
     - name: Run Unit Test
       run: make test
+
+  integration-test:
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Cache bundler
+      uses: actions/cache@v1
+      with:
+        path: vendor/bundle
+        key: bundler-${{ hashFiles('Gemfile.lock') }}
+        restore-keys: bundler-${{ hashFiles('Gemfile.lock') }}
+
+    - name: Bundle install
+      run: bundle
+
+    - name: Run Integration Test
+      run: make integration-test
