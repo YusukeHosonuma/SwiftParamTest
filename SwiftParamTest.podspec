@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "SwiftParamTest"
-  spec.version      = "0.1.3"
+  spec.version      = "1.0.0"
   spec.summary      = "Parameterized test for Swift."
 
   spec.description  = <<-DESC

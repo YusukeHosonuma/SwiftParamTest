@@ -74,7 +74,7 @@ pod 'SwiftParamTest'
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/YusukeHosonuma/SwiftParamTest.git", from: "0.1.3"),
+    .package(url: "https://github.com/YusukeHosonuma/SwiftParamTest.git", from: "1.0.0"),
 ]
 ```
 
