@@ -8,8 +8,9 @@
 
 import XCTest
 
-public func assert<T, R: Equatable>(to f: @escaping (T) -> R) -> Expect<T, R> {
-    Expect(f: f)
+public func assert<T, R: Equatable>(to f: @escaping (T) -> R,
+                                    with customAssertion: Assertion<R>? = nil) -> Expect<T, R> {
+    Expect(f: f, customAssertion: customAssertion)
 }
 
 public func when<T, R>(_ when: T,
