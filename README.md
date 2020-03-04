@@ -62,6 +62,39 @@ func testObject() {
 }
 ```
 
+## Custom Assertion
+
+SwiftParamTest use `XCTAssertEqual()` and own error message by default.
+
+But you can use custom assertion like follows.
+
+```swift
+// original assertion
+func originalAssert<T: Equatable>(_ actual: T, _ expected: T, file: StaticString, line: UInt) {
+    let message = """
+
+    ----
+    Expected: \(expected)
+    Actual: \(actual)
+    ----
+    """
+    XCTAssert(expected == actual, message, file: file, line: line)
+}
+
+// passed by `with` arguments
+assert(to: fizzBuzz, with: originalAssert).expect([
+    when(1, then: "Fizz"),
+    // =>
+    //
+    // XCTAssertTrue failed -
+    // ----
+    // Expected: 1
+    // Actual: Fizz
+    // ----
+    //
+])
+```
+
 ## Installation
 
 ### CocoaPods
