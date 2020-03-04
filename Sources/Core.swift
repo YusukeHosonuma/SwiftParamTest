@@ -8,6 +8,8 @@
 
 import XCTest
 
+public typealias Assertion<T: Equatable> = (_ expected: T, _ actual: T, _ file: StaticString, _ line: UInt) -> Void
+
 public struct Row<T, R> {
     var args: T
     var expect: R
@@ -24,6 +26,7 @@ public struct Row<T, R> {
 
 public struct Expect<T, R> where R: Equatable {
     var f: (T) -> R
+    var customAssertion: Assertion<R>?
 }
 
 extension Expect {
@@ -31,7 +34,11 @@ extension Expect {
         for row in rows {
             let result = f(row.args)
             let message = "Expect to '\(row.expect)' but '\(result)'"
-            XCTAssert(row.expect == result, message, file: row.file, line: row.line)
+            if let assertion = customAssertion {
+                assertion(row.expect, result, row.file, row.line)
+            } else {
+                XCTAssert(row.expect == result, message, file: row.file, line: row.line)
+            }
         }
     }
 }
