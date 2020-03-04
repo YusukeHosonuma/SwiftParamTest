@@ -8,14 +8,24 @@
 
 import XCTest
 
-public func assert<T, R: Equatable>(to f: @escaping (T) -> R,
-                                    with customAssertion: Assertion<R>? = nil) -> Expect<T, R> {
-    Expect(f: f, customAssertion: customAssertion)
+/// Create `Expect` for start parameterized-test.
+/// - Parameters:
+///   - targetFunction: test target function
+///   - customAssertion: custom assertion function
+public func assert<INPUT, RESULT: Equatable>(to targetFunction: @escaping (INPUT) -> RESULT,
+                                             with customAssertion: Assertion<RESULT>? = nil) -> Expect<INPUT, RESULT> {
+    Expect(targetFunction: targetFunction, customAssertion: customAssertion)
 }
 
-public func when<T, R>(_ when: T,
-                       then: R,
-                       file: StaticString = #file,
-                       line: UInt = #line) -> Row<T, R> {
-    Row(when: when, expect: then, file: file, line: line)
+/// Definition test parameter and expected value.
+/// - Parameters:
+///   - inputParams: input parameters of test target function
+///   - expect: expected value
+///   - file: #file
+///   - line: #line
+public func when<INPUT, EXPECT>(_ inputParams: INPUT,
+                                then expect: EXPECT,
+                                file: StaticString = #file,
+                                line: UInt = #line) -> Row<INPUT, EXPECT> {
+    Row(inputParams: inputParams, expect: expect, file: file, line: line)
 }

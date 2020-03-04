@@ -10,33 +10,34 @@ import XCTest
 
 public typealias Assertion<T: Equatable> = (_ expected: T, _ actual: T, _ file: StaticString, _ line: UInt) -> Void
 
-public struct Row<T, R> {
-    var args: T
-    var expect: R
+public struct Row<INPUT, EXPECT> {
+    var inputParams: INPUT
+    var expect: EXPECT
     var file: StaticString
     var line: UInt
 
-    init(when: T, expect: R, file: StaticString = #file, line: UInt = #line) {
-        args = when
+    init(inputParams: INPUT, expect: EXPECT, file: StaticString = #file, line: UInt = #line) {
+        self.inputParams = inputParams
         self.expect = expect
         self.file = file
         self.line = line
     }
 }
 
-public struct Expect<T, R> where R: Equatable {
-    var f: (T) -> R
-    var customAssertion: Assertion<R>?
+public struct Expect<INPUT, RESULT> where RESULT: Equatable {
+    var targetFunction: (INPUT) -> RESULT
+    var customAssertion: Assertion<RESULT>?
 }
 
 extension Expect {
-    public func expect(_ rows: [Row<T, R>]) {
+    public func expect(_ rows: [Row<INPUT, RESULT>]) {
         for row in rows {
-            let result = f(row.args)
-            let message = "Expect to '\(row.expect)' but '\(result)'"
+            let result = targetFunction(row.inputParams)
+
             if let assertion = customAssertion {
                 assertion(row.expect, result, row.file, row.line)
             } else {
+                let message = "Expect to '\(row.expect)' but '\(result)'"
                 XCTAssert(row.expect == result, message, file: row.file, line: row.line)
             }
         }
