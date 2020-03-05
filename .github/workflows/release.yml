@@ -120,7 +120,7 @@ jobs:
       if: always()
       uses: rtCamp/action-slack-notify@v2.0.0
       env:
-        SLACK_CHANNEL: yhosonuma
+        SLACK_CHANNEL: swift-param-test
         SLACK_COLOR: ${{ (env.JOB_RESULT == 'success' && 'good') || 'danger' }}
         SLACK_ICON: https://github.com/Penginmura.png?size=48
         SLACK_MESSAGE: ${{ env.JOB_RESULT }}
