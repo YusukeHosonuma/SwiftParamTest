@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,7 +15,9 @@
 		E526AF8124066EA000947648 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E526AF7F24066EA000947648 /* Main.storyboard */; };
 		E526AF8324066EA300947648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E526AF8224066EA300947648 /* Assets.xcassets */; };
 		E526AF8624066EA300947648 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E526AF8424066EA300947648 /* LaunchScreen.storyboard */; };
-		E526AF9124066EA300947648 /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E526AF9024066EA300947648 /* ExampleTests.swift */; };
+		E526AF9124066EA300947648 /* BasicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E526AF9024066EA300947648 /* BasicTests.swift */; };
+		E5A3854E241A49BD006501FA /* FunctionBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A3854D241A49BD006501FA /* FunctionBuilderTests.swift */; };
+		E5A38550241A49DB006501FA /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A3854F241A49DB006501FA /* Assets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +46,10 @@
 		E526AF8524066EA300947648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E526AF8724066EA300947648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E526AF8C24066EA300947648 /* ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E526AF9024066EA300947648 /* ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTests.swift; sourceTree = "<group>"; };
+		E526AF9024066EA300947648 /* BasicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTests.swift; sourceTree = "<group>"; };
 		E526AF9224066EA300947648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5A3854D241A49BD006501FA /* FunctionBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionBuilderTests.swift; sourceTree = "<group>"; };
+		E5A3854F241A49DB006501FA /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +89,6 @@
 				551E7EC0D926E3E01375BC5C /* Pods-ExampleTests.debug.xcconfig */,
 				929DDA007667FD48F9C620AC /* Pods-ExampleTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -126,7 +129,9 @@
 		E526AF8F24066EA300947648 /* ExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				E526AF9024066EA300947648 /* ExampleTests.swift */,
+				E526AF9024066EA300947648 /* BasicTests.swift */,
+				E5A3854D241A49BD006501FA /* FunctionBuilderTests.swift */,
+				E5A3854F241A49DB006501FA /* Assets.swift */,
 				E526AF9224066EA300947648 /* Info.plist */,
 			);
 			path = ExampleTests;
@@ -310,7 +315,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E526AF9124066EA300947648 /* ExampleTests.swift in Sources */,
+				E526AF9124066EA300947648 /* BasicTests.swift in Sources */,
+				E5A3854E241A49BD006501FA /* FunctionBuilderTests.swift in Sources */,
+				E5A38550241A49DB006501FA /* Assets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
