@@ -11,54 +11,124 @@ Parameterized-test for Swift. (with XCTest)
 
 ![Screenshot](https://raw.githubusercontent.com/YusukeHosonuma/SwiftParamTest/master/screenshot.png)
 
+## Code Style
+
+SwiftParamTest supports two way of code-style dependent on Swift version.
+
+### Function builders API (recommended)
+
+I recomend this when you use Swift 5.1 or later (because this API use Function builders).
+
+```swift
+assert(to: fizzBuzz) {
+    args(1, expect: "1")
+    args(2, expect: "2")
+    args(3, expect: "Fizz")
+    args(4, expect: "4")
+    args(5, expect: "Buzz")
+    ...
+}
+```
+
+### Basic API
+
+You can use following when you use under Swift 5.1.
+
+```swift
+assert(to: fizzBuzz, expect: [
+    args(1, expect: "1"),
+    args(2, expect: "2"),
+    args(3, expect: "Fizz"),
+    args(4, expect: "4"),
+    args(5, expect: "Buzz"),
+    ...
+}
+```
+
+## Operator based API
+
+You can use the operator `==>` API that like following:
+
+```swift
+assert(to: fizzBuzz) {
+    expect(1 ==> "1")
+    expect(2 ==> "2")
+    expect(3 ==> "Fizz")
+    expect(4 ==> "4")
+    expect(5 ==> "Buzz")
+    ...
+}
+```
+
 ## Example
 
 ```swift
-/// Test for single argument function
-func testFizzBuzz() {
-    assert(to: fizzBuzz).expect([
-        when(1, then: "1"),
-        when(2, then: "2"),
-        when(3, then: "Fizz"),
-        when(4, then: "4"),
-        when(5, then: "Buzz"),
-        ...
-    ])
+import SwiftParamTest
+import XCTest
+
+///
+/// Test to two argument function
+///
+func testIndent() {s
+    assert(to: indent) {
+        // basic
+        args(("Hello", 0), expect: "Hello")
+        args(("Hello", 2), expect: "  Hello")
+        args(("Hello", 4), expect: "    Hello")
+
+        // operator
+        expect(("Hello", 0) ==> "Hello")
+        expect(("Hello", 2) ==> "  Hello")
+        expect(("Hello", 4) ==> "    Hello")
+    }
 }
 
-/// Test for two argument function
-func testIndent() {
-    assert(to: indent).expect([
-        when(("Hello", 0), then: "Hello"),
-        when(("Hello", 2), then: "  Hello"),
-        when(("Hello", 4), then: "    Hello"),
-    ])
-}
-
+///
 /// Test for operator
+///
 func testOperator() {
-    assert(to: +).expect([
-        when((1, 1), then: 2),
-        when((1, 2), then: 3),
-        when((2, 2), then: 4),
-    ])
+    assert(to: +) {
+        // basic
+        args((1, 1), expect: 2)
+        args((1, 2), expect: 3)
+        args((2, 2), expect: 4)
+
+        // operator
+        expect((1, 1) ==> 2)
+        expect((1, 2) ==> 3)
+        expect((2, 2) ==> 4)
+    }
 }
 
+///
 /// Test for method of object
+///
 func testObject() {
-    let calc = Calculator(initialValue: 10)
+        let calc = Calculator(initialValue: 10)
 
-    assert(to: calc.add).expect([
-        when(1, then: 11),
-        when(2, then: 12),
-        when(3, then: 13),
-    ])
+        assert(to: calc.add) {
+            // basic
+            args(1, expect: 11)
+            args(2, expect: 12)
+            args(3, expect: 13)
 
-    assert(to: calc.subtraction).expect([
-        when(1, then: 9),
-        when(2, then: 8),
-        when(3, then: 7),
-    ])
+            // operator
+            expect(1 ==> 11)
+            expect(2 ==> 12)
+            expect(3 ==> 13)
+        }
+
+        assert(to: calc.subtraction) {
+            // basic
+            args(1, expect: 9)
+            args(2, expect: 8)
+            args(3, expect: 7)
+
+            // operator
+            expect(1 ==> 9)
+            expect(2 ==> 8)
+            expect(3 ==> 7)
+        }
 }
 ```
 
@@ -69,8 +139,8 @@ SwiftParamTest use `XCTAssertEqual()` and own error message by default.
 But you can use custom assertion like follows.
 
 ```swift
-// original assertion
-func originalAssert<T: Equatable>(_ actual: T, _ expected: T, file: StaticString, line: UInt) {
+// custom assertion
+func customAssert<T: Equatable>(_ actual: T, _ expected: T, file: StaticString, line: UInt) {
     let message = """
 
     ----
@@ -82,8 +152,8 @@ func originalAssert<T: Equatable>(_ actual: T, _ expected: T, file: StaticString
 }
 
 // passed by `with` arguments
-assert(to: fizzBuzz, with: originalAssert).expect([
-    when(1, then: "Fizz"),
+assert(to: fizzBuzz, with: customAssertion) {
+    args(1, expect: "Fizz")
     // =>
     //
     // XCTAssertTrue failed -

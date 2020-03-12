@@ -21,9 +21,12 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		E55DBAB2240916C3009D5C20 /* DSLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55DBAB1240916C3009D5C20 /* DSLTests.swift */; };
+		E55DBAB2240916C3009D5C20 /* FunctionBuilderDSLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55DBAB1240916C3009D5C20 /* FunctionBuilderDSLTests.swift */; };
+		E5A38544241A3E62006501FA /* BasicDSLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A38543241A3E62006501FA /* BasicDSLTests.swift */; };
+		E5A38546241A3F20006501FA /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A38545241A3F20006501FA /* Function.swift */; };
+		E5A3854A241A400D006501FA /* BasicDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A38549241A400D006501FA /* BasicDSL.swift */; };
 		OBJ_29 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_8 /* Core.swift */; };
-		OBJ_30 /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* DSL.swift */; };
+		OBJ_30 /* FunctionBuilderDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* FunctionBuilderDSL.swift */; };
 		OBJ_37 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_48 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* XCTestManifests.swift */; };
 		OBJ_50 /* SwiftParamTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftParamTest::SwiftParamTest::Product" /* SwiftParamTest.framework */; };
@@ -47,8 +50,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E55DBAB1240916C3009D5C20 /* DSLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLTests.swift; sourceTree = "<group>"; };
+		E55DBAB1240916C3009D5C20 /* FunctionBuilderDSLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionBuilderDSLTests.swift; sourceTree = "<group>"; };
 		E5A0684B2407B00800FF06E4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E5A38543241A3E62006501FA /* BasicDSLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicDSLTests.swift; sourceTree = "<group>"; };
+		E5A38545241A3F20006501FA /* Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
+		E5A38549241A400D006501FA /* BasicDSL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicDSL.swift; sourceTree = "<group>"; };
 		OBJ_11 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		OBJ_15 /* Example */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Example; sourceTree = SOURCE_ROOT; };
 		OBJ_16 /* vendor */ = {isa = PBXFileReference; lastKnownFileType = folder; path = vendor; sourceTree = SOURCE_ROOT; };
@@ -61,7 +67,7 @@
 		OBJ_23 /* SwiftParamTest.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SwiftParamTest.podspec; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_8 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
-		OBJ_9 /* DSL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSL.swift; sourceTree = "<group>"; };
+		OBJ_9 /* FunctionBuilderDSL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionBuilderDSL.swift; sourceTree = "<group>"; };
 		"SwiftParamTest::SwiftParamTest::Product" /* SwiftParamTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftParamTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"SwiftParamTest::SwiftParamTestTests::Product" /* SwiftParamTestTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = SwiftParamTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -93,11 +99,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E5A3854B241A41D4006501FA /* DSL */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_9 /* FunctionBuilderDSL.swift */,
+				E5A38549241A400D006501FA /* BasicDSL.swift */,
+			);
+			path = DSL;
+			sourceTree = "<group>";
+		};
+		E5A3854C241A41DD006501FA /* DSL */ = {
+			isa = PBXGroup;
+			children = (
+				E55DBAB1240916C3009D5C20 /* FunctionBuilderDSLTests.swift */,
+				E5A38543241A3E62006501FA /* BasicDSLTests.swift */,
+			);
+			path = DSL;
+			sourceTree = "<group>";
+		};
 		OBJ_10 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				E5A3854C241A41DD006501FA /* DSL */,
 				OBJ_11 /* XCTestManifests.swift */,
-				E55DBAB1240916C3009D5C20 /* DSLTests.swift */,
+				E5A38545241A3F20006501FA /* Function.swift */,
 			);
 			path = Tests;
 			sourceTree = SOURCE_ROOT;
@@ -134,8 +159,8 @@
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				E5A3854B241A41D4006501FA /* DSL */,
 				OBJ_8 /* Core.swift */,
-				OBJ_9 /* DSL.swift */,
 			);
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -225,7 +250,8 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_29 /* Core.swift in Sources */,
-				OBJ_30 /* DSL.swift in Sources */,
+				OBJ_30 /* FunctionBuilderDSL.swift in Sources */,
+				E5A3854A241A400D006501FA /* BasicDSL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,8 +267,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				E5A38544241A3E62006501FA /* BasicDSLTests.swift in Sources */,
 				OBJ_48 /* XCTestManifests.swift in Sources */,
-				E55DBAB2240916C3009D5C20 /* DSLTests.swift in Sources */,
+				E55DBAB2240916C3009D5C20 /* FunctionBuilderDSLTests.swift in Sources */,
+				E5A38546241A3F20006501FA /* Function.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

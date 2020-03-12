@@ -8,31 +8,31 @@
 
 import XCTest
 
-public typealias Assertion<T: Equatable> = (_ expected: T, _ actual: T, _ file: StaticString, _ line: UInt) -> Void
+public typealias CustomAssertion<T: Equatable> = (_ expected: T, _ actual: T, _ file: StaticString, _ line: UInt) -> Void
 
-public struct Row<INPUT, EXPECT> {
-    var inputParams: INPUT
-    var expect: EXPECT
+public struct Row<T, R> {
+    var args: T
+    var expect: R
     var file: StaticString
     var line: UInt
 
-    init(inputParams: INPUT, expect: EXPECT, file: StaticString = #file, line: UInt = #line) {
-        self.inputParams = inputParams
+    init(args: T, expect: R, file: StaticString = #file, line: UInt = #line) {
+        self.args = args
         self.expect = expect
         self.file = file
         self.line = line
     }
 }
 
-public struct Expect<INPUT, RESULT> where RESULT: Equatable {
-    var targetFunction: (INPUT) -> RESULT
-    var customAssertion: Assertion<RESULT>?
+public struct ParameterizedTest<T, R> where R: Equatable {
+    var target: (T) -> R
+    var customAssertion: CustomAssertion<R>?
 }
 
-extension Expect {
-    public func expect(_ rows: [Row<INPUT, RESULT>]) {
+extension ParameterizedTest {
+    public func execute(with rows: [Row<T, R>]) {
         for row in rows {
-            let result = targetFunction(row.inputParams)
+            let result = target(row.args)
 
             if let assertion = customAssertion {
                 assertion(row.expect, result, row.file, row.line)
