@@ -81,3 +81,12 @@ class DSLTests: XCTestCase {
         }
     }
 }
+
+extension DSLTests {
+    static var allTests : [(String, (DSLTests) -> () throws -> Void)] {
+        [
+            ("testExample", testExample),
+            ("testCustomAssertion", testCustomAssertion)
+        ]
+    }
+}
