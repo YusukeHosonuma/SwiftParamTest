@@ -42,7 +42,7 @@ assert(to: fizzBuzz, expect: [
     args(4, expect: "4"),
     args(5, expect: "Buzz"),
     ...
-}
+])
 ```
 
 ## Operator based API
@@ -180,7 +180,7 @@ assert(to: fizzBuzz, with: customAssertion) {
     // Actual: Fizz
     // ----
     //
-])
+}
 ```
 
 ## Installation
