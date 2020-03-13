@@ -5,6 +5,8 @@
 //  Created by Yusuke Hosonuma on 2020/03/12.
 //
 
+// MARK: - Basic API
+
 /// Assert to `target` function with `rows` parameters.
 /// - Parameters:
 ///   - target: test target function or operator
@@ -29,4 +31,33 @@ public func args<T, R>(_ args: T,
                        file: StaticString = #file,
                        line: UInt = #line) -> Row<T, R> {
     Row(args: args, expect: expect, file: file, line: line)
+}
+
+// MARK: - Operator based API
+
+precedencegroup ExpectRowPrecedence {
+    lowerThan: FunctionArrowPrecedence
+}
+
+infix operator ==>: ExpectRowPrecedence
+
+/// Create expectation row.
+/// - Parameters:
+///   - lhs: parameters of test target function
+///   - rhs: expected value
+public func ==> <T, R>(lhs: T, rhs: R) -> ExpectRow<T, R> {
+    ExpectRow(args: lhs, expect: rhs)
+}
+
+public struct ExpectRow<T, R> {
+    var args: T
+    var expect: R
+}
+
+public func expect<T, R>(
+    _ row: ExpectRow<T, R>,
+    file: StaticString = #file,
+    line: UInt = #line
+) -> Row<T, R> {
+    Row(args: row.args, expect: row.expect, file: file, line: line)
 }
