@@ -11,6 +11,6 @@ let package = Package(
     dependencies: [],
     targets: [
         .target(name: "SwiftParamTest", dependencies: [], path: "Sources"),
-        .testTarget(name: "SwiftParamTestTests", dependencies: ["SwiftParamTest"], path: "Tests"),
+        .testTarget(name: "SwiftParamTestTests", dependencies: ["SwiftParamTest"]),
     ]
 )

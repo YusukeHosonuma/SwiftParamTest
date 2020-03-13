@@ -91,6 +91,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4BC02A72241B4B9900540911 /* SwiftParamTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				E5A3854C241A41DD006501FA /* DSL */,
+				OBJ_11 /* XCTestManifests.swift */,
+				E5A38545241A3F20006501FA /* Function.swift */,
+			);
+			path = SwiftParamTestTests;
+			sourceTree = "<group>";
+		};
 		E5A0684A2407B00700FF06E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,9 +130,7 @@
 		OBJ_10 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				E5A3854C241A41DD006501FA /* DSL */,
-				OBJ_11 /* XCTestManifests.swift */,
-				E5A38545241A3F20006501FA /* Function.swift */,
+				4BC02A72241B4B9900540911 /* SwiftParamTestTests */,
 			);
 			path = Tests;
 			sourceTree = SOURCE_ROOT;
