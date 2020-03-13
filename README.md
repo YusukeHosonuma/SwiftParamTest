@@ -180,7 +180,7 @@ assert(to: fizzBuzz, with: customAssertion) {
     // Actual: Fizz
     // ----
     //
-])
+}
 ```
 
 ## Installation
