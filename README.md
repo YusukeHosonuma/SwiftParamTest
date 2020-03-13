@@ -9,7 +9,7 @@
 
 Parameterized-test for Swift. (with XCTest)
 
-![Screenshot](https://raw.githubusercontent.com/YusukeHosonuma/SwiftParamTest/master/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/YusukeHosonuma/SwiftParamTest/master/Image/screenshot.png)
 
 ## Code Style
 
@@ -58,6 +58,24 @@ assert(to: fizzBuzz) {
     expect(5 ==> "Buzz")
     ...
 }
+```
+
+## Xcode Code Snippets
+
+![Xcode Code Snippets](https://raw.githubusercontent.com/YusukeHosonuma/SwiftParamTest/master/Image/xcode-snippet.gif)
+
+Copy `.codesnippet` files to the following directory from [.xcode](.xcode) directory:
+
+```text
+~/Library/Developer/Xcode/UserData/CodeSnippets/
+```
+
+and restart Xcode.
+
+Or run the following command from the root of the repository:
+
+```text
+$ make snippets
 ```
 
 ## Example
