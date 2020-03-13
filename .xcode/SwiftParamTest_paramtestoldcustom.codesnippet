@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>paramtestoldcustom</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>assert(to: &lt;#target#&gt;, with: &lt;#customAssertion#&gt;, expect: [
+    args(&lt;#args#&gt;, expect: &lt;#expect#&gt;),
+    args(&lt;#args#&gt;, expect: &lt;#expect#&gt;),
+    args(&lt;#args#&gt;, expect: &lt;#expect#&gt;),
+])
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>107F982B-EC52-4EBE-AD81-41ACA7545544</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Parameterized-test: Old with Custom Assertion</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
