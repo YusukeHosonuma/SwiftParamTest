@@ -47,6 +47,24 @@ class BasicDSLTests: XCTestCase {
             args((1, 2), expect: 3),
             args((2, 2), expect: 4),
         ])
+
+        // instance method that has not argument
+        assert(to: String.lowercased, expect: [
+            args("hello", expect: "hello"),
+            args("HELLO", expect: "hello"),
+        ])
+
+        // instance method that has arguments
+        assert(to: String.hasPrefix, expect: [
+            args(("hello", "he"), expect: true),
+            args(("hello", "HE"), expect: false),
+        ])
+
+        // instance method that receiver is fixed
+        assert(to: "hello".hasPrefix, expect: [
+            args("he", expect: true),
+            args("HE", expect: false),
+        ])
     }
 
     func testCustomAssertion() {

@@ -17,7 +17,36 @@ public func assert<T, R: Equatable>(
     with customAssertion: CustomAssertion<R>? = nil,
     expect rows: [Row<T, R>]
 ) {
-    ParameterizedTest(target: target, customAssertion: customAssertion).execute(with: rows)
+    ParameterizedTest(target: target,
+                      customAssertion: customAssertion).execute(with: rows)
+}
+
+/// Assert to `target` function with `rows` parameters.
+/// - Parameters:
+///   - instanceMethod: test target instance methods
+///   - customAssertion: custom assert function (default: `XCTAssertEqual`)
+///   - rows: test parameteres
+public func assert<T, R: Equatable>(
+    to instanceMethod: @escaping (T) -> () -> R,
+    with customAssertion: CustomAssertion<R>? = nil,
+    expect rows: [Row<T, R>]
+) {
+    ParameterizedTest(target: flatten(instanceMethod),
+                      customAssertion: customAssertion).execute(with: rows)
+}
+
+/// Assert to `target` function with `rows` parameters.
+/// - Parameters:
+///   - instanceMethod: test target instance methods
+///   - customAssertion: custom assert function (default: `XCTAssertEqual`)
+///   - rows: test parameteres
+public func assert<T1, T2, R: Equatable>(
+    to instanceMethod: @escaping (T1) -> (T2) -> R,
+    with customAssertion: CustomAssertion<R>? = nil,
+    expect rows: [Row<(T1, T2), R>]
+) {
+    ParameterizedTest(target: flatten(instanceMethod),
+                      customAssertion: customAssertion).execute(with: rows)
 }
 
 /// Definition test parameter and expected value.

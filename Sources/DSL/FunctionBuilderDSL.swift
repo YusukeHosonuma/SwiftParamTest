@@ -23,9 +23,38 @@ public struct ParameterBuilder<T, R> {
 ///   - customAssertion: custom assertion function
 @available(swift 5.1)
 public func assert<T, R: Equatable>(
-    to targetFunction: @escaping (T) -> R,
+    to function: @escaping (T) -> R,
     with customAssertion: CustomAssertion<R>? = nil,
     @ParameterBuilder <T, R> rows: () -> [Row<T, R>]
 ) {
-    ParameterizedTest(target: targetFunction, customAssertion: customAssertion).execute(with: rows())
+    ParameterizedTest(target: function, customAssertion:
+        customAssertion).execute(with: rows())
+}
+
+/// Create `Expect` for start parameterized-test.
+/// - Parameters:
+///   - instanceMethod: test target instance method
+///   - customAssertion: custom assertion function
+@available(swift 5.1)
+public func assert<T, R: Equatable>(
+    to instanceMethod: @escaping (T) -> () -> R,
+    with customAssertion: CustomAssertion<R>? = nil,
+    @ParameterBuilder <T, R> rows: () -> [Row<T, R>]
+) {
+    ParameterizedTest(target: flatten(instanceMethod),
+                      customAssertion: customAssertion).execute(with: rows())
+}
+
+/// Create `Expect` for start parameterized-test.
+/// - Parameters:
+///   - instanceMethod: test target instance method
+///   - customAssertion: custom assertion function
+@available(swift 5.1)
+public func assert<T1, T2, R: Equatable>(
+    to instanceMethod: @escaping (T1) -> (T2) -> R,
+    with customAssertion: CustomAssertion<R>? = nil,
+    @ParameterBuilder <(T1, T2), R> rows: () -> [Row<(T1, T2), R>]
+) {
+    ParameterizedTest(target: flatten(instanceMethod),
+                      customAssertion: customAssertion).execute(with: rows())
 }

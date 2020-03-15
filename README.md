@@ -84,69 +84,43 @@ $ make snippets
 import SwiftParamTest
 import XCTest
 
-///
-/// Test to two argument function
-///
-func testIndent() {s
-    assert(to: indent) {
-        // basic
-        args(("Hello", 0), expect: "Hello")
-        args(("Hello", 2), expect: "  Hello")
-        args(("Hello", 4), expect: "    Hello")
+class ExampleTests: XCTestCase {
 
-        // operator
-        expect(("Hello", 0) ==> "Hello")
-        expect(("Hello", 2) ==> "  Hello")
-        expect(("Hello", 4) ==> "    Hello")
-    }
-}
-
-///
-/// Test for operator
-///
-func testOperator() {
-    assert(to: +) {
-        // basic
-        args((1, 1), expect: 2)
-        args((1, 2), expect: 3)
-        args((2, 2), expect: 4)
-
-        // operator
-        expect((1, 1) ==> 2)
-        expect((1, 2) ==> 3)
-        expect((2, 2) ==> 4)
-    }
-}
-
-///
-/// Test for method of object
-///
-func testObject() {
-        let calc = Calculator(initialValue: 10)
-
-        assert(to: calc.add) {
-            // basic
-            args(1, expect: 11)
-            args(2, expect: 12)
-            args(3, expect: 13)
-
-            // operator
-            expect(1 ==> 11)
-            expect(2 ==> 12)
-            expect(3 ==> 13)
+    func testExample() {
+        //
+        // for `function`
+        //
+        assert(to: abs) {
+            args( 0, expect: 0)
+            args( 2, expect: 2)
+            args(-2, expect: 2)
         }
 
-        assert(to: calc.subtraction) {
-            // basic
-            args(1, expect: 9)
-            args(2, expect: 8)
-            args(3, expect: 7)
-
-            // operator
-            expect(1 ==> 9)
-            expect(2 ==> 8)
-            expect(3 ==> 7)
+        //
+        // for `operator`
+        //
+        assert(to: +) {
+            args((1, 1), expect: 2)
+            args((1, 2), expect: 3)
+            args((2, 2), expect: 4)
         }
+
+        //
+        // for `instance method` (when receiver is not fixed)
+        //
+        assert(to: String.hasPrefix, expect: [
+            args(("hello", "he"), expect: true),
+            args(("hello", "HE"), expect: false),
+        ])
+
+        //
+        // for `instance method` (when receiver is fixed)
+        //
+        assert(to: "hello".hasPrefix) {
+            args("he", expect: true)
+            args("HE", expect: false)
+        }
+    }
 }
 ```
 
