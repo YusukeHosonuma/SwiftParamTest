@@ -17,7 +17,7 @@ SwiftParamTest supports two way of code-style dependent on Swift version.
 
 ### Function builders API (recommended)
 
-I recomend this when you use Swift 5.1 or later (because this API use Function builders).
+I recommend this when you use Swift 5.1 or later (because this API uses Function builders).
 
 ```swift
 assert(to: fizzBuzz) {
@@ -126,7 +126,7 @@ class ExampleTests: XCTestCase {
 
 ## Custom Assertion
 
-SwiftParamTest use `XCTAssertEqual()` and own error message by default.
+SwiftParamTest uses `XCTAssertEqual()` and owns error messages by default.
 
 But you can use custom assertion like follows.
 
