@@ -8,7 +8,7 @@
 import SwiftParamTest
 import XCTest
 
-class DSLTests: XCTestCase {
+class FunctionBuilderDSLTests: XCTestCase {
     override func setUp() {}
 
     override func tearDown() {}
@@ -97,14 +97,5 @@ class DSLTests: XCTestCase {
             args(14, expect: "14")
             args(15, expect: "FizzBuzz")
         }
-    }
-}
-
-extension DSLTests {
-    static var allTests : [(String, (DSLTests) -> () throws -> Void)] {
-        [
-            ("testExample", testExample),
-            ("testCustomAssertion", testCustomAssertion)
-        ]
     }
 }
