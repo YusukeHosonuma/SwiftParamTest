@@ -35,6 +35,27 @@ jobs:
         name: result
         path: job-result.txt
 
+  unit-test-in-linux:
+    runs-on: ubuntu-latest
+    container: swift:5.1
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Run Unit Test
+      run: make test
+
+    - name: Write result
+      if: always()
+      run: echo ${{ job.status }} > job-result.txt
+
+    - name: Upload job result for job slack-notify
+      if: always()
+      uses: actions/upload-artifact@v1
+      with:
+        name: result
+        path: job-result.txt
+
   integration-test:
     runs-on: macos-latest
 

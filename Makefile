@@ -14,12 +14,12 @@ setup: ## Install requirement development tools to system and setup (not include
 	pre-commit install
 
 .PHONY: build
-build: ## swift - build
+build: ## Run build
 	swift build
 
 .PHONY: test
-test: ## swift - test
-	swift test
+test: ## Run tests
+	swift test --enable-test-discovery
 
 .PHONY: xcode
 xcode: ## swift - generate xcode project
@@ -55,3 +55,22 @@ snippets: $(SNIPDIR) ## Install code snippets
 
 $(SNIPDIR):
 	mkdir -p $(SNIPDIR)
+
+#
+# Development for Linux
+#
+
+.PHONY: linux
+linux: ## Run and login docker container
+	docker run --rm -it \
+		--volume "$(CURDIR):/src" \
+		--workdir "/src" \
+		swift:5.1
+
+.PHONY: linux-test
+linux-test: ## Run tests on linux in docker
+	docker run --rm \
+		--volume "$(CURDIR):/src" \
+		--workdir "/src" \
+		swift:5.1 \
+		swift test --enable-test-discovery
