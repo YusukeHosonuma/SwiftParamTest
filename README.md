@@ -9,6 +9,8 @@
 
 Parameterized-test for Swift. (with XCTest)
 
+![Logo](https://raw.githubusercontent.com/YusukeHosonuma/SwiftParamTest/master/Image/logo.png)
+
 ![Screenshot](https://raw.githubusercontent.com/YusukeHosonuma/SwiftParamTest/master/Image/screenshot.png)
 
 ## Code Style
