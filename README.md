@@ -7,9 +7,9 @@
 [![License](https://img.shields.io/github/license/YusukeHosonuma/SwiftPrettyPrint)](https://github.com/YusukeHosonuma/SwiftPrettyPrint/blob/master/LICENSE)
 [![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Ftobi462)](https://twitter.com/tobi462)
 
-Parameterized-test for Swift. (with XCTest)
-
 ![Logo](https://raw.githubusercontent.com/YusukeHosonuma/SwiftParamTest/master/Image/logo.png)
+
+Parameterized-test for Swift. (with XCTest)
 
 ![Screenshot](https://raw.githubusercontent.com/YusukeHosonuma/SwiftParamTest/master/Image/screenshot.png)
 
