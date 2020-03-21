@@ -26,6 +26,7 @@ public struct Row<T, R> {
 
 public struct ParameterizedTest<T, R> where R: Equatable {
     var target: (T) -> R
+    var header: [String] = []
     var customAssertion: CustomAssertion<R>?
 }
 

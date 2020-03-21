@@ -8,6 +8,7 @@
 import SwiftParamTest
 import XCTest
 
+/*
 class BasicDSLTests: XCTestCase {
     override func setUp() {}
 
@@ -110,3 +111,4 @@ extension BasicDSLTests {
         ]
     }
 }
+*/
