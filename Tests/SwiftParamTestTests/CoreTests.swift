@@ -23,29 +23,13 @@ class CoreTests: XCTestCase {
         return x + y
     }
 
-    class SpyRunner<T: EvalutableRow>: ParameterizedTestRunner<T> {
-        var args_row: [T] = []
-        var args_result: [T.ReturnType] = []
-        var args_message: [String?] = []
-        var args_content: String = ""
-
-        override func executeAssert(row: T, result: T.ReturnType, message: String?) {
-            self.args_row.append(row)
-            self.args_result.append(result)
-            self.args_message.append(message)
-        }
-        
-        override func saveAttachement(_ xctest: XCTestCase, content: String) {
-            self.args_content = content
-        }
-    }
-    
     func testExecute_fullSpecification() {
 
         // Given:
         let runner = SpyRunner<Row2<Int, Int, Int>>(
             runner: self,
-            header: ["x", "y"]
+            header: ["x", "y"],
+            option: ParameterizedTestZ.Option(traceTable: .markdown, saveTableToAttachement: .markdown)
         )
 
         // When:
@@ -73,7 +57,8 @@ class CoreTests: XCTestCase {
         | 2 | -4 |      -20 |
         """
         assertEqualLines(result.table, expectedTable)
-        assertEqualLines(runner.args_content, expectedTable)
+        assertEqualLines(runner.args_traceContent, expectedTable)
+        assertEqualLines(runner.args_saveContent, expectedTable)
     }
     
     func testExecute_headerOmmitted() {
@@ -81,7 +66,8 @@ class CoreTests: XCTestCase {
         // Given:
         let runner = SpyRunner<Row2<Int, Int, Int>>(
             runner: self,
-            header: nil
+            header: nil,
+            option: ParameterizedTestZ.Option(traceTable: .markdown, saveTableToAttachement: .markdown)
         )
 
         // When:
@@ -102,6 +88,50 @@ class CoreTests: XCTestCase {
         |      2 |     -4 |      -20 |
         """
         assertEqualLines(result.table, expectedTable)
-        assertEqualLines(runner.args_content, expectedTable)
+        assertEqualLines(runner.args_traceContent, expectedTable)
+        assertEqualLines(runner.args_saveContent, expectedTable)
+    }
+    
+    func testExecute_option_none() {
+        
+        // Given:
+        let runner = SpyRunner<Row2<Int, Int, Int>>(
+            runner: self,
+            header: nil,
+            option: ParameterizedTestZ.Option(traceTable: .none, saveTableToAttachement: .none)
+        )
+        
+        // When:
+        let rows = [
+            Row2(args: (1,  0), expect:   1, target: plus, file: #file, line: #line),
+            Row2(args: (2, -4), expect: -20, target: plus, file: #file, line: #line) // `expect` is invalid
+        ]
+        _ = runner.execute(with: rows)
+        
+        // Then:
+        XCTAssertEqual(runner.args_traceContent, "") // expect to not called
+        XCTAssertEqual(runner.args_saveContent, "")  // expect to not called
+    }
+}
+
+class SpyRunner<T: EvalutableRow>: ParameterizedTestRunner<T> {
+    var args_row: [T] = []
+    var args_result: [T.ReturnType] = []
+    var args_message: [String?] = []
+    var args_traceContent: String = ""
+    var args_saveContent: String = ""
+
+    override func executeAssert(row: T, result: T.ReturnType, message: String?) {
+        self.args_row.append(row)
+        self.args_result.append(result)
+        self.args_message.append(message)
+    }
+    
+    override func traceTable(content: String) {
+        self.args_traceContent = content
+    }
+    
+    override func saveAttachement(_ xctest: XCTestCase, content: String) {
+        self.args_saveContent = content
     }
 }

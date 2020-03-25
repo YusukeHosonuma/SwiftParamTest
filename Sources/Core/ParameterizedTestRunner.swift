@@ -8,20 +8,33 @@
 import XCTest
 
 public class ParameterizedTestZ {
-    public struct Option {
-        var saveMarkdownTable: Bool
+    public enum TableType {
+        case none
+        case markdown
     }
 
-    public static var option = Option(saveMarkdownTable: true) // TODO: Firebase 見習う？（あとテストする）
+    public struct Option {
+        var traceTable: TableType
+        var saveTableToAttachement: TableType
+    }
+
+    public static let defaultOption = Option(traceTable: .none, saveTableToAttachement: .markdown)
+    public static var option = defaultOption
 }
 
 public class ParameterizedTestRunner<T: EvalutableRow> {
     let runner: XCTestCase
     let header: [String]?
+    let option: ParameterizedTestZ.Option
 
-    init(runner: XCTestCase, header: [String]?) {
+    init(
+        runner: XCTestCase,
+        header: [String]?,
+        option: ParameterizedTestZ.Option = ParameterizedTestZ.option
+    ) {
         self.runner = runner
         self.header = header
+        self.option = option
     }
 
     @discardableResult
@@ -65,9 +78,19 @@ public class ParameterizedTestRunner<T: EvalutableRow> {
         let table = try! generateMarkdownTable(header: tableHeader + ["Expected"],
                                                rows: rows.map { $0.columns })
 
-        print("🍎")
-        print(table)
-        saveAttachement(runner, content: table)
+        switch option.traceTable {
+        case .none:
+            break
+        case .markdown:
+            traceTable(content: table)
+        }
+
+        switch option.saveTableToAttachement {
+        case .none:
+            break
+        case .markdown:
+            saveAttachement(runner, content: table)
+        }
 
         return ParameterizedTestResult(table: table)
     }
@@ -80,6 +103,10 @@ public class ParameterizedTestRunner<T: EvalutableRow> {
         } else {
             XCTAssert(row.expect == result, file: row.file, line: row.line)
         }
+    }
+
+    func traceTable(content: String) {
+        print(content)
     }
 
     func saveAttachement(_ xctest: XCTestCase, content: String) {
