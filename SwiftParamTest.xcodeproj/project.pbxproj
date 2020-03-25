@@ -25,14 +25,14 @@
 		E55DBAB2240916C3009D5C20 /* FunctionBuilderDSLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55DBAB1240916C3009D5C20 /* FunctionBuilderDSLTests.swift */; };
 		E5A38544241A3E62006501FA /* BasicDSLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A38543241A3E62006501FA /* BasicDSLTests.swift */; };
 		E5A38546241A3F20006501FA /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A38545241A3F20006501FA /* Function.swift */; };
-		E5A3854A241A400D006501FA /* BasicDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A38549241A400D006501FA /* BasicDSL.swift */; };
+		E5A3854A241A400D006501FA /* BasicDSLAssert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A38549241A400D006501FA /* BasicDSLAssert.swift */; };
 		E5C3B8872422690100AC7926 /* UtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C3B8862422690100AC7926 /* UtilTests.swift */; };
 		E5C3B88A24226B5C00AC7926 /* Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C3B88924226B5C00AC7926 /* Assertions.swift */; };
 		E5CA4920241F92890068ED90 /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CA491F241F92890068ED90 /* CoreTests.swift */; };
 		E5E40F032425D86E00A48EAE /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E40F022425D86E00A48EAE /* Row.swift */; };
 		E5E40F052425D8D900A48EAE /* ParameterizedTestRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E40F042425D8D900A48EAE /* ParameterizedTestRunner.swift */; };
 		E5E40F072425D94400A48EAE /* ParameterBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E40F062425D94400A48EAE /* ParameterBuilder.swift */; };
-		E5E40F0A2425DA5200A48EAE /* Assert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E40F092425DA5200A48EAE /* Assert.swift */; };
+		E5E40F0A2425DA5200A48EAE /* FunctionBuilderDSLAssert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E40F092425DA5200A48EAE /* FunctionBuilderDSLAssert.swift */; };
 		E5E40F0C2425DA8500A48EAE /* Args.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E40F0B2425DA8500A48EAE /* Args.swift */; };
 		E5E40F0F2425DBA100A48EAE /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E40F0E2425DBA100A48EAE /* Operator.swift */; };
 		OBJ_29 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_8 /* Core.swift */; };
@@ -64,14 +64,14 @@
 		E5A0684B2407B00800FF06E4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E5A38543241A3E62006501FA /* BasicDSLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicDSLTests.swift; sourceTree = "<group>"; };
 		E5A38545241A3F20006501FA /* Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
-		E5A38549241A400D006501FA /* BasicDSL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicDSL.swift; sourceTree = "<group>"; };
+		E5A38549241A400D006501FA /* BasicDSLAssert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicDSLAssert.swift; sourceTree = "<group>"; };
 		E5C3B8862422690100AC7926 /* UtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilTests.swift; sourceTree = "<group>"; };
 		E5C3B88924226B5C00AC7926 /* Assertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assertions.swift; sourceTree = "<group>"; };
 		E5CA491F241F92890068ED90 /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
 		E5E40F022425D86E00A48EAE /* Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
 		E5E40F042425D8D900A48EAE /* ParameterizedTestRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterizedTestRunner.swift; sourceTree = "<group>"; };
 		E5E40F062425D94400A48EAE /* ParameterBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterBuilder.swift; sourceTree = "<group>"; };
-		E5E40F092425DA5200A48EAE /* Assert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assert.swift; sourceTree = "<group>"; };
+		E5E40F092425DA5200A48EAE /* FunctionBuilderDSLAssert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionBuilderDSLAssert.swift; sourceTree = "<group>"; };
 		E5E40F0B2425DA8500A48EAE /* Args.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Args.swift; sourceTree = "<group>"; };
 		E5E40F0E2425DBA100A48EAE /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		OBJ_11 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				E5E40F062425D94400A48EAE /* ParameterBuilder.swift */,
-				E5E40F092425DA5200A48EAE /* Assert.swift */,
+				E5E40F092425DA5200A48EAE /* FunctionBuilderDSLAssert.swift */,
 			);
 			path = FunctionBuilder;
 			sourceTree = "<group>";
@@ -179,7 +179,7 @@
 		E5E40F0D2425DACA00A48EAE /* Basic */ = {
 			isa = PBXGroup;
 			children = (
-				E5A38549241A400D006501FA /* BasicDSL.swift */,
+				E5A38549241A400D006501FA /* BasicDSLAssert.swift */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -317,9 +317,9 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_29 /* Core.swift in Sources */,
-				E5E40F0A2425DA5200A48EAE /* Assert.swift in Sources */,
+				E5E40F0A2425DA5200A48EAE /* FunctionBuilderDSLAssert.swift in Sources */,
 				E5E40F052425D8D900A48EAE /* ParameterizedTestRunner.swift in Sources */,
-				E5A3854A241A400D006501FA /* BasicDSL.swift in Sources */,
+				E5A3854A241A400D006501FA /* BasicDSLAssert.swift in Sources */,
 				E5E40F072425D94400A48EAE /* ParameterBuilder.swift in Sources */,
 				E5E40F032425D86E00A48EAE /* Row.swift in Sources */,
 				E5E40F0F2425DBA100A48EAE /* Operator.swift in Sources */,
