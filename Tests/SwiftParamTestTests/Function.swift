@@ -16,13 +16,26 @@ func fizzBuzz(_ x: Int) -> String {
     }
 }
 
-func customAssertion<T: Equatable>(_ actual: T, _ expected: T, file: StaticString, line: UInt) {
-    let message = """
+class SpyCustomAssertion<T: Equatable> {
+    struct Assert<T: Equatable>: Equatable {
+        var actual: T
+        var expected: T
+    }
+
+    init() {}
+
+    var args_assert: [Assert<T>] = []
     
-    ----
-    Expected: \(expected)
-    Actual: \(actual)
-    ----
-    """
-    XCTAssert(expected == actual, message, file: file, line: line)
+    func assert(_ actual: T, _ expected: T, file: StaticString, line: UInt) {
+        args_assert.append(Assert(actual: actual, expected: expected))
+
+        let message = """
+        
+        ----
+        Expected: \(expected)
+        Actual: \(actual)
+        ----
+        """
+        XCTAssert(expected == actual, message, file: file, line: line)
+    }
 }
