@@ -7,30 +7,15 @@
 
 import XCTest
 
-public class ParameterizedTestZ {
-    public enum TableType {
-        case none
-        case markdown
-    }
-
-    public struct Option {
-        var traceTable: TableType
-        var saveTableToAttachement: TableType
-    }
-
-    public static let defaultOption = Option(traceTable: .none, saveTableToAttachement: .markdown)
-    public static var option = defaultOption
-}
-
 public class ParameterizedTestRunner<T: EvalutableRow> {
     let runner: XCTestCase
     let header: [String]?
-    let option: ParameterizedTestZ.Option
+    let option: ParameterizedTest.Option
 
     init(
         runner: XCTestCase,
         header: [String]?,
-        option: ParameterizedTestZ.Option = ParameterizedTestZ.option
+        option: ParameterizedTest.Option = ParameterizedTest.option
     ) {
         self.runner = runner
         self.header = header

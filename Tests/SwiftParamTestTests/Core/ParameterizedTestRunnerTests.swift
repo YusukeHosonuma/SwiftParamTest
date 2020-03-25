@@ -29,7 +29,7 @@ class CoreTests: XCTestCase {
         let runner = SpyRunner<Row2<Int, Int, Int>>(
             runner: self,
             header: ["x", "y"],
-            option: ParameterizedTestZ.Option(traceTable: .markdown, saveTableToAttachement: .markdown)
+            option: ParameterizedTest.Option(traceTable: .markdown, saveTableToAttachement: .markdown)
         )
 
         // When:
@@ -67,7 +67,7 @@ class CoreTests: XCTestCase {
         let runner = SpyRunner<Row2<Int, Int, Int>>(
             runner: self,
             header: nil,
-            option: ParameterizedTestZ.Option(traceTable: .markdown, saveTableToAttachement: .markdown)
+            option: ParameterizedTest.Option(traceTable: .markdown, saveTableToAttachement: .markdown)
         )
 
         // When:
@@ -98,7 +98,7 @@ class CoreTests: XCTestCase {
         let runner = SpyRunner<Row2<Int, Int, Int>>(
             runner: self,
             header: nil,
-            option: ParameterizedTestZ.Option(traceTable: .none, saveTableToAttachement: .none)
+            option: ParameterizedTest.Option(traceTable: .none, saveTableToAttachement: .none)
         )
         
         // When:

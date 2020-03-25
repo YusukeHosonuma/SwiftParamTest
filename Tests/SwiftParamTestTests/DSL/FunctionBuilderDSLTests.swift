@@ -9,7 +9,9 @@ import SwiftParamTest
 import XCTest
 
 class FunctionBuilderDSLTests: XCTestCase {
-    override func setUp() {}
+    override func setUp() {
+        ParameterizedTest.option = ParameterizedTest.Option(traceTable: .none, saveTableToAttachement: .none)
+    }
 
     override func tearDown() {}
     

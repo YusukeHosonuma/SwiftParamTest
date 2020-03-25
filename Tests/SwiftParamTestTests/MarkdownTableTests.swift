@@ -8,7 +8,7 @@
 import XCTest
 @testable import SwiftParamTest
 
-class UtilTests: XCTestCase {
+class MarkdownTableTests: XCTestCase {
 
     override func setUp() {}
 
