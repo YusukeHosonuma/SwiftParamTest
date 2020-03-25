@@ -8,58 +8,108 @@
 import SwiftParamTest
 import XCTest
 
-class DSLTests: XCTestCase {
+class FunctionBuilderDSLTests: XCTestCase {
     override func setUp() {}
 
     override func tearDown() {}
     
     func testExample() {
         // function
-        assert(to: fizzBuzz, header: ["n"]) {
-            args(1, expect: "1")
-            args(2, expect: "2")
-            args(3, expect: "Fizz")
-            args(4, expect: "4")
-            args(5, expect: "Buzz")
-            args(6, expect: "Fizz")
-            args(7, expect: "7")
-            args(8, expect: "8")
-            args(9, expect: "Fizz")
-            args(10, expect: "Buzz")
-            args(11, expect: "11")
-            args(12, expect: "Fizz")
-            args(13, expect: "13")
-            args(14, expect: "14")
-            args(15, expect: "FizzBuzz")
-        }
-
+        assertEqualLines(
+            assert(to: fizzBuzz, header: ["n"]) {
+                args(1, expect: "1")
+                args(2, expect: "2")
+                args(3, expect: "Fizz")
+                args(4, expect: "4")
+                args(5, expect: "Buzz")
+                args(6, expect: "Fizz")
+                args(7, expect: "7")
+                args(8, expect: "8")
+                args(9, expect: "Fizz")
+                args(10, expect: "Buzz")
+                args(11, expect: "11")
+                args(12, expect: "Fizz")
+                args(13, expect: "13")
+                args(14, expect: "14")
+                args(15, expect: "FizzBuzz")
+            }.table,
+            """
+            | n  | Expected |
+            |----|----------|
+            |  1 | 1        |
+            |  2 | 2        |
+            |  3 | Fizz     |
+            |  4 | 4        |
+            |  5 | Buzz     |
+            |  6 | Fizz     |
+            |  7 | 7        |
+            |  8 | 8        |
+            |  9 | Fizz     |
+            | 10 | Buzz     |
+            | 11 | 11       |
+            | 12 | Fizz     |
+            | 13 | 13       |
+            | 14 | 14       |
+            | 15 | FizzBuzz |
+            """
+        )
+        
         // operator
-        assert(to: +, header: ["lhs", "rhs"]) {
-            args(1, 1, expect: 2)
-            args(1, 2, expect: 3)
-            args(2, 2, expect: 4)
-        }
+        assertEqualLines(
+            assert(to: +, header: ["lhs", "rhs"]) {
+                args(1, 1, expect: 2)
+                args(1, 2, expect: 3)
+                args(2, 2, expect: 4)
+            }.table,
+            """
+            | lhs | rhs | Expected |
+            |-----|-----|----------|
+            |   1 |   1 |        2 |
+            |   1 |   2 |        3 |
+            |   2 |   2 |        4 |
+            """
+        )
 
         // instance method that has not argument
-        assert(to: String.lowercased, header: ["string"]) {
-            args("hello", expect: "hello")
-            args("HELLO", expect: "hello")
-        }
-
+        assertEqualLines(
+            assert(to: String.lowercased, header: ["string"]) {
+                args("hello", expect: "hello")
+                args("HELLO", expect: "hello")
+            }.table,
+            """
+                | string | Expected |
+                |--------|----------|
+                | hello  | hello    |
+                | HELLO  | hello    |
+                """
+        )
         // instance method that has arguments
-        assert(to: String.hasPrefix, header: ["string", "prefix"]) {
-            args("hello", "he", expect: true)
-            args("hello", "HE", expect: false)
-        }
-
+        assertEqualLines(
+            assert(to: String.hasPrefix, header: ["string", "prefix"]) {
+                args("hello", "he", expect: true)
+                args("hello", "HE", expect: false)
+            }.table,
+            """
+            | string | prefix | Expected |
+            |--------|--------|----------|
+            | hello  | he     | true     |
+            | hello  | HE     | false    |
+            """
+        )
+        
         // instance method that receiver is fixed
-        assert(
-            to: "hello".hasPrefix,
-            header: ["prefix"]
-        ) {
-            args("he", expect: true)
-            args("HE", expect: false)
-        }
+        assertEqualLines(
+            assert(to: "hello".hasPrefix, header: ["prefix"]) {
+                args("he", expect: true)
+                args("HE", expect: false)
+            }.table,
+            """
+            | prefix | Expected |
+            |--------|----------|
+            | he     | true     |
+            | HE     | false    |
+            """
+        )
     }
     
     func testFunctionArgs() {

@@ -92,13 +92,13 @@ extension XCTestCase {
 
     @discardableResult
     @available(swift 5.1)
-    public func assert<T1, R>(
-        to function: @escaping (T1) -> () -> R,
+    public func assert<V, R>(
+        to function: @escaping (V) -> () -> R,
         header: [String]? = nil,
         with customAssertion: CustomAssertion<R>? = nil,
-        @ParameterBuilder1 <T1, R> builder: () -> [Row1<T1, R>]
+        @ParameterBuilder1 <V, R> builder: () -> [Row1<V, R>]
     ) -> ParameterizedTestResult where R: Equatable {
-        let rows: [Row1<T1, R>] = builder().map {
+        let rows: [Row1<V, R>] = builder().map {
             var row = $0
             row.target = flatten(function)
             row.customAssertion = customAssertion
