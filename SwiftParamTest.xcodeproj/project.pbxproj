@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		E51AFC13242B9848005F3529 /* OperatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51AFC12242B9848005F3529 /* OperatorTests.swift */; };
 		E52C7079241E328800D6BE41 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C7078241E328800D6BE41 /* Util.swift */; };
 		E55DBAB2240916C3009D5C20 /* FunctionBuilderDSLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55DBAB1240916C3009D5C20 /* FunctionBuilderDSLTests.swift */; };
 		E5A38544241A3E62006501FA /* BasicDSLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A38543241A3E62006501FA /* BasicDSLTests.swift */; };
@@ -59,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E51AFC12242B9848005F3529 /* OperatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorTests.swift; sourceTree = "<group>"; };
 		E52C7078241E328800D6BE41 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		E55DBAB1240916C3009D5C20 /* FunctionBuilderDSLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionBuilderDSLTests.swift; sourceTree = "<group>"; };
 		E5A0684B2407B00800FF06E4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -146,6 +148,7 @@
 			children = (
 				E55DBAB1240916C3009D5C20 /* FunctionBuilderDSLTests.swift */,
 				E5A38543241A3E62006501FA /* BasicDSLTests.swift */,
+				E51AFC12242B9848005F3529 /* OperatorTests.swift */,
 			);
 			path = DSL;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				E5CA4920241F92890068ED90 /* CoreTests.swift in Sources */,
 				OBJ_48 /* XCTestManifests.swift in Sources */,
 				E5C3B88A24226B5C00AC7926 /* Assertions.swift in Sources */,
+				E51AFC13242B9848005F3529 /* OperatorTests.swift in Sources */,
 				E55DBAB2240916C3009D5C20 /* FunctionBuilderDSLTests.swift in Sources */,
 				E5A38546241A3F20006501FA /* Function.swift in Sources */,
 			);
