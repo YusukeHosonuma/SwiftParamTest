@@ -71,7 +71,7 @@ class CoreTests: XCTestCase {
         )
 
         // When:
-        let rows = [ // TODO: test to `file` and `line`
+        let rows = [
             Row2(args: (1,  0), expect:   1, target: plus, file: #file, line: #line),
             Row2(args: (2, -4), expect: -20, target: plus, file: #file, line: #line) // `expect` is invalid
         ]
