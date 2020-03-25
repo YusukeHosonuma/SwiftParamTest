@@ -110,10 +110,12 @@ public class ParameterizedTestRunner<T: EvalutableRow> {
     }
 
     func saveAttachement(_ xctest: XCTestCase, content: String) {
-        let attachment = XCTAttachment(string: content)
-        attachment.lifetime = .keepAlways
-        attachment.name = "table.md"
-        xctest.add(attachment)
+        #if os(macOS) || os(iOS) || os(watchOS) || os(tvOS)
+            let attachment = XCTAttachment(string: content)
+            attachment.lifetime = .keepAlways
+            attachment.name = "table.md"
+            xctest.add(attachment)
+        #endif
     }
 }
 
