@@ -46,7 +46,7 @@ class Tests: XCTestCase {
             expect(13 ==> "13"),
             expect(14 ==> "14"),
             expect(15 ==> "FizzBuzz"),
-        ])
+        ] as [Row1<Int, String>])
     }
 
     /// Example: test for two argument function
