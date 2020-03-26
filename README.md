@@ -29,6 +29,7 @@ assert(to: max) {
 }
 
 // You can also use tuple (with label).
+
 assert(to: max) {
     args((x: 1, y: 2), expect: 2)
     args((x: 2, y: 1), expect: 2)
@@ -48,6 +49,7 @@ assert(to: max, expect: [
 ])
 
 // You can also use tuple (with label).
+
 assert(to: max, expect: [
     args((x: 1, y: 2), expect: 2),
     args((x: 2, y: 1), expect: 2),
@@ -62,16 +64,16 @@ You can specify row by use the operator `==>` that like following:
 ```swift
 // Function Builder API
 assert(to: max) {
-    expect((x: 1, y: 2) ==> 2)
-    expect((x: 2, y: 1) ==> 2)
-    expect((x: 4, y: 4) ==> 4)
+    expect((1, 2) ==> 2)
+    expect((2, 1) ==> 2)
+    expect((4, 4) ==> 4)
 }
 
 // Legacy API
 assert(to: max, expect: [
-    expect((x: 1, y: 2) ==> 2),
-    expect((x: 2, y: 1) ==> 2),
-    expect((x: 4, y: 4) ==> 4),
+    expect((1, 2) ==> 2),
+    expect((2, 1) ==> 2),
+    expect((4, 4) ==> 4),
 ])
 ```
 
