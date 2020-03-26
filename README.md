@@ -22,45 +22,131 @@ SwiftParamTest supports two way of code-style dependent on Swift version.
 I recommend this when you use Swift 5.1 or later (because this API uses Function builders).
 
 ```swift
-assert(to: fizzBuzz) {
-    args(1, expect: "1")
-    args(2, expect: "2")
-    args(3, expect: "Fizz")
-    args(4, expect: "4")
-    args(5, expect: "Buzz")
-    ...
+assert(to: max) {
+    args(1, 2, expect: 2)
+    args(2, 1, expect: 2)
+    args(4, 4, expect: 4)
+}
+
+// You can also use tuple (with label).
+assert(to: max) {
+    args((x: 1, y: 2), expect: 2)
+    args((x: 2, y: 1), expect: 2)
+    args((x: 4, y: 4), expect: 4)
 }
 ```
 
-### Basic API
+### Legacy API
 
-You can use following when you use under Swift 5.1.
+You can use array literal based API that like follwing when you use under Swift 5.1.
 
 ```swift
-assert(to: fizzBuzz, expect: [
-    args(1, expect: "1"),
-    args(2, expect: "2"),
-    args(3, expect: "Fizz"),
-    args(4, expect: "4"),
-    args(5, expect: "Buzz"),
-    ...
+assert(to: max, expect: [
+    args(1, 2, expect: 2),
+    args(2, 1, expect: 2),
+    args(4, 4, expect: 4),
+])
+
+// You can also use tuple (with label).
+assert(to: max, expect: [
+    args((x: 1, y: 2), expect: 2),
+    args((x: 2, y: 1), expect: 2),
+    args((x: 4, y: 4), expect: 4),
 ])
 ```
 
 ## Operator based API
 
-You can use the operator `==>` API that like following:
+You can specify row by use the operator `==>` that like following:
 
 ```swift
-assert(to: fizzBuzz) {
-    expect(1 ==> "1")
-    expect(2 ==> "2")
-    expect(3 ==> "Fizz")
-    expect(4 ==> "4")
-    expect(5 ==> "Buzz")
-    ...
+// Function Builder API
+assert(to: max) {
+    expect((x: 1, y: 2) ==> 2)
+    expect((x: 2, y: 1) ==> 2)
+    expect((x: 4, y: 4) ==> 4)
+}
+
+// Legacy API
+assert(to: max, expect: [
+    expect((x: 1, y: 2) ==> 2),
+    expect((x: 2, y: 1) ==> 2),
+    expect((x: 4, y: 4) ==> 4),
+])
+```
+
+## Save or Output Markdown Table
+
+Save or output markdown table when enabled by option (default is all disable).
+
+```swift
+override func setUp() {
+    ParameterizedTest.option = ParameterizedTest.Option(
+        traceTable: .markdown,            // output console is enabled
+        saveTableToAttachement: .markdown // save to attachement is enabled
+    )
+}
+
+override func tearDown() {
+    ParameterizedTest.option = ParameterizedTest.defaultOption // restore to default
+}
+
+func testExample() {
+    assert(to: max) {
+        args(1, 2, expect: 2)
+        args(2, 1, expect: 2)
+        args(4, 4, expect: 4)
+    }
+    // =>
+    // | Args 0 | Args 1 | Expected |
+    // |--------|--------|----------|
+    // |      1 |      2 |        2 |
+    // |      2 |      1 |        2 |
+    // |      4 |      4 |        4 |
 }
 ```
+
+You can also specify column header name too.
+
+```swift
+func testMarkdownTable() {
+    assert(to: max, header: ["x", "y"]) { // specify `header`
+        args(1, 2, expect: 2)
+        args(2, 1, expect: 2)
+        args(4, 4, expect: 4)
+    }
+    // =>
+    // | x | y | Expected |
+    // |---|---|----------|
+    // | 1 | 2 |        2 |
+    // | 2 | 1 |        2 |
+    // | 4 | 4 |        4 |
+}
+```
+
+![markdown table](https://raw.githubusercontent.com/YusukeHosonuma/SwiftParamTest/master/Image/markdown-table.png)
+
+You can also retrive markdown table from result too.
+
+```swift
+let tableString = assert(to: max, header: ["x", "y"]) {
+                      args(1, 2, expect: 2)
+                      args(2, 1, expect: 2)
+                      args(4, 4, expect: 4)
+                  }.table
+
+print(tableString)
+// =>
+// | x | y | Expected |
+// |---|---|----------|
+// | 1 | 2 |        2 |
+// | 2 | 1 |        2 |
+// | 4 | 4 |        4 |
+```
+
+This is useful for copy and paste the test specification table to PR or others.
+
+![markdown table in PR](https://raw.githubusercontent.com/YusukeHosonuma/SwiftParamTest/master/Image/github-pr-markdown-table.png)
 
 ## Xcode Code Snippets
 
@@ -87,37 +173,37 @@ import SwiftParamTest
 import XCTest
 
 class ExampleTests: XCTestCase {
+    override func setUp() {
+        ParameterizedTest.option = ParameterizedTest.Option(traceTable: .markdown,
+                                                            saveTableToAttachement: .markdown)
+    }
+
+    override func tearDown() {
+        ParameterizedTest.option = ParameterizedTest.defaultOption
+    }
 
     func testExample() {
-        //
         // for `function`
-        //
         assert(to: abs) {
             args( 0, expect: 0)
             args( 2, expect: 2)
             args(-2, expect: 2)
         }
 
-        //
         // for `operator`
-        //
         assert(to: +) {
-            args((1, 1), expect: 2)
-            args((1, 2), expect: 3)
-            args((2, 2), expect: 4)
+            args(1, 1, expect: 2)
+            args(1, 2, expect: 3)
+            args(2, 2, expect: 4)
         }
 
-        //
         // for `instance method` (when receiver is not fixed)
-        //
-        assert(to: String.hasPrefix, expect: [
-            args(("hello", "he"), expect: true),
-            args(("hello", "HE"), expect: false),
-        ])
+        assert(to: String.hasPrefix) {
+            args("hello", "he", expect: true)
+            args("hello", "HE", expect: false)
+        }
 
-        //
         // for `instance method` (when receiver is fixed)
-        //
         assert(to: "hello".hasPrefix) {
             args("he", expect: true)
             args("HE", expect: false)
@@ -156,6 +242,36 @@ assert(to: fizzBuzz, with: customAssertion) {
     // Actual: Fizz
     // ----
     //
+}
+```
+
+## Limitation
+
+- Only up to **four** arguments are supported.
+
+## FAQ
+
+### Can't compile or compiler is clashed
+
+This library use many type inference, therefore type inference are failed in sometime.
+This may be resolved by explicitly specifying the type information.
+
+for example:
+
+```swift
+// Legacy API
+assert(to: max, expect: [
+    args(1, 2, expect: 2),
+    args(2, 1, expect: 2),
+    args(4, 4, expect: 4),
+] as [Row2<Int, Int, Int>]) // `N` in `RowN` is arguments count
+
+// Function Builder API
+typealias T = Int
+assert(to: max) {
+    args(1 as T, 2 as T, expect: 2)
+    args(2 as T, 1 as T, expect: 2)
+    args(4 as T, 4 as T, expect: 4)
 }
 ```
 

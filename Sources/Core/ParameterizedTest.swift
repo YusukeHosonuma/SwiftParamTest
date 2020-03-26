@@ -6,6 +6,8 @@
 //
 
 public class ParameterizedTest {
+    private init() {}
+
     public enum TableType {
         case none
         case markdown
@@ -24,6 +26,8 @@ public class ParameterizedTest {
         }
     }
 
-    public static let defaultOption = Option(traceTable: .none, saveTableToAttachement: .markdown)
+    public static let defaultOption = Option(traceTable: .none,
+                                             saveTableToAttachement: .none)
+
     public static var option = defaultOption
 }
