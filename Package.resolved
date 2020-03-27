@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Flatten",
+        "repositoryURL": "https://github.com/YusukeHosonuma/Flatten.git",
+        "state": {
+          "branch": null,
+          "revision": "fd173bb286ebd55965d5eced9f33cef19b671e2c",
+          "version": "0.1.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

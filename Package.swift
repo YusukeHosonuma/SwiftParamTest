@@ -8,9 +8,11 @@ let package = Package(
     products: [
         .library(name: "SwiftParamTest", targets: ["SwiftParamTest"]),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/YusukeHosonuma/Flatten.git", from: "0.1.0"),
+    ],
     targets: [
-        .target(name: "SwiftParamTest", dependencies: [], path: "Sources"),
+        .target(name: "SwiftParamTest", dependencies: ["Flatten"], path: "Sources"),
         .testTarget(name: "SwiftParamTestTests", dependencies: ["SwiftParamTest"]),
     ]
 )

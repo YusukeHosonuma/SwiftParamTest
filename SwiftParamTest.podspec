@@ -18,8 +18,8 @@ Pod::Spec.new do |spec|
   # spec.tvos.deployment_target    = "9.3"
 
   spec.source = { :git => "https://github.com/YusukeHosonuma/SwiftParamTest.git", :tag => "#{spec.version}" }
-
   spec.source_files  = "Sources/**/*.{swift}"
+  spec.dependency "Flatten"
 
   spec.framework = "XCTest"
   spec.user_target_xcconfig = {
