@@ -5,6 +5,7 @@
 //  Created by Yusuke Hosonuma on 2020/03/12.
 //
 
+import Flatten
 import XCTest
 
 extension XCTestCase {
