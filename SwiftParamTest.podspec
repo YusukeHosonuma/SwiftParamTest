@@ -19,7 +19,9 @@ Pod::Spec.new do |spec|
 
   spec.source = { :git => "https://github.com/YusukeHosonuma/SwiftParamTest.git", :tag => "#{spec.version}" }
   spec.source_files  = "Sources/**/*.{swift}"
+
   spec.dependency "Flatten"
+  spec.dependency "SHList"
 
   spec.framework = "XCTest"
   spec.user_target_xcconfig = {
