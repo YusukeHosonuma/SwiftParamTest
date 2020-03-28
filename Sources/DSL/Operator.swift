@@ -5,6 +5,8 @@
 //  Created by Yusuke Hosonuma on 2020/03/21.
 //
 
+import SHList
+
 precedencegroup ExpectRowPrecedence {
     lowerThan: FunctionArrowPrecedence
 }
@@ -14,19 +16,19 @@ infix operator ==>: ExpectRowPrecedence
 // MARK: - Operator
 
 public func ==> <T1, R>(lhs: T1, rhs: R) -> Row1<T1, R> {
-    Row1(args: lhs, expect: rhs, file: "", line: 0)
+    Row1(args: HList(lhs), expect: rhs, file: "", line: 0)
 }
 
 public func ==> <T1, T2, R>(lhs: (T1, T2), rhs: R) -> Row2<T1, T2, R> {
-    Row2(args: lhs, expect: rhs, file: "", line: 0)
+    Row2(args: HList(lhs), expect: rhs, file: "", line: 0)
 }
 
 public func ==> <T1, T2, T3, R>(lhs: (T1, T2, T3), rhs: R) -> Row3<T1, T2, T3, R> {
-    Row3(args: lhs, expect: rhs, file: "", line: 0)
+    Row3(args: HList(lhs), expect: rhs, file: "", line: 0)
 }
 
 public func ==> <T1, T2, T3, T4, R>(lhs: (T1, T2, T3, T4), rhs: R) -> Row4<T1, T2, T3, T4, R> {
-    Row4(args: lhs, expect: rhs, file: "", line: 0)
+    Row4(args: HList(lhs), expect: rhs, file: "", line: 0)
 }
 
 // MARK: - expect()
