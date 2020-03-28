@@ -5,6 +5,7 @@
 //  Created by Yusuke Hosonuma on 2020/03/16.
 //
 
+import SHList
 import XCTest
 @testable import SwiftParamTest
 
@@ -34,8 +35,8 @@ class CoreTests: XCTestCase {
 
         // When:
         let rows = [
-            Row2(args: (1,  0), expect:   1, target: plus, file: #file, line: #line),
-            Row2(args: (2, -4), expect: -20, target: plus, file: #file, line: #line) // `expect` is invalid
+            Row2(args: HList(1,  0), expect:   1, target: plus, file: #file, line: #line),
+            Row2(args: HList(2, -4), expect: -20, target: plus, file: #file, line: #line) // `expect` is invalid
         ]
         
         let result = runner.execute(with: rows)
@@ -72,8 +73,8 @@ class CoreTests: XCTestCase {
 
         // When:
         let rows = [
-            Row2(args: (1,  0), expect:   1, target: plus, file: #file, line: #line),
-            Row2(args: (2, -4), expect: -20, target: plus, file: #file, line: #line) // `expect` is invalid
+            Row2(args: HList(1,  0), expect:   1, target: plus, file: #file, line: #line),
+            Row2(args: HList(2, -4), expect: -20, target: plus, file: #file, line: #line) // `expect` is invalid
         ]
         let result = runner.execute(with: rows)
         
@@ -103,8 +104,8 @@ class CoreTests: XCTestCase {
         
         // When:
         let rows = [
-            Row2(args: (1,  0), expect:   1, target: plus, file: #file, line: #line),
-            Row2(args: (2, -4), expect: -20, target: plus, file: #file, line: #line) // `expect` is invalid
+            Row2(args: HList(1,  0), expect:   1, target: plus, file: #file, line: #line),
+            Row2(args: HList(2, -4), expect: -20, target: plus, file: #file, line: #line) // `expect` is invalid
         ]
         _ = runner.execute(with: rows)
         

@@ -6,8 +6,17 @@
         "repositoryURL": "https://github.com/YusukeHosonuma/Flatten.git",
         "state": {
           "branch": null,
-          "revision": "fd173bb286ebd55965d5eced9f33cef19b671e2c",
+          "revision": "5286148aa255f57863e0d7e2b827ca6b91677051",
           "version": "0.1.0"
+        }
+      },
+      {
+        "package": "SHList",
+        "repositoryURL": "https://github.com/YusukeHosonuma/SHList.git",
+        "state": {
+          "branch": "master",
+          "revision": "eb618555af07e637510d79e5d90dc156122dbab7",
+          "version": null
         }
       }
     ]
