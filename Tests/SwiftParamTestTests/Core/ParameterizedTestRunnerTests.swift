@@ -23,7 +23,74 @@ class CoreTests: XCTestCase {
         args_y.append(y)
         return x + y
     }
+    
+    enum DivError: Error {
+        case divByZero
+        case foo
+    }
+    
+    func div(x: Int, y: Int) throws -> Int {
+        if y == 0 {
+            throw DivError.divByZero
+        } else {
+            return x / y
+        }
+    }
+    
+    func test1() {
+        assert2(to: div) {
+            ERow2(args: HList(1,  1), expect: 1, target: plus, file: #file, line: #line)
+//            ERow2(args: HList(1,  0), expect: 2, target: plus, file: #file, line: #line)
+            ErrorRow2(args: HList(2, 0), expectError: DivError.divByZero, target: div, file: #file, line: #line)
+        }
+    }
+    
+    func test2() {
+        
+        // When:
+        let rows = [
+            ERow2(args: HList(1,  0), expect:   1, target: plus, file: #file, line: #line),
+            ERow2(args: HList(2, -4), expect: -20, target: plus, file: #file, line: #line) // `expect` is invalid
+        ]
+        
+        let runner = ParameterizedTestRunner2(
+            runner: self,
+            header: ["x", "y"]
+        )
+        
+//        let result = runner.execute(with: rows)
+//
+//        let expectedTable = """
+//        | x | y  | Expected |
+//        |---|----|----------|
+//        | 1 |  0 |        1 |
+//        | 2 | -4 |      -20 |
+//        """
+//        assertEqualLines(result.table, expectedTable)
+    }
+    
+    func test3() {
 
+        
+        // When:
+//        let rows: [EvalutableRow2] = [
+////            ERow2(args: HList(1,  0), expect:   1, target: plus, file: #file, line: #line),
+//            ErrorRow2(args: HList(2, -4), expectError: DivError.divByZero, target: div, file: #file, line: #line) // `expect` is invalid
+//        ]
+        
+        let runner = ParameterizedTestRunner2(
+            runner: self,
+            header: ["x", "y"]
+        )
+        
+//        var wrapper = RowsWrapper()
+//        wrapper.append(ERow2(args: HList(6,  2), expect: 23, target: div, file: #file, line: #line))
+//        wrapper.append(ERow2(args: HList(6,  3), expect: 2, target: div, file: #file, line: #line))
+//        wrapper.append(ErrorRow2(args: HList(2, -4), expectError: DivError.divByZero, target: div, file: #file, line: #line))
+//                
+//        let result = runner.execute(with: wrapper)
+    }
+    
     func testExecute_fullSpecification() {
 
         // Given:

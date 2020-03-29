@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		E56CCF12242F6378000BCE93 /* ParameterizedTestRunner2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56CCF11242F6378000BCE93 /* ParameterizedTestRunner2.swift */; };
+		E5B5EBB924301E4A00167A1B /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B5EBB824301E4A00167A1B /* DSL.swift */; };
 		OBJ_100 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* Row.swift */; };
 		OBJ_101 /* CustomAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* CustomAssertion.swift */; };
 		OBJ_102 /* Args.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* Args.swift */; };
@@ -97,6 +99,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E56CCF11242F6378000BCE93 /* ParameterizedTestRunner2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterizedTestRunner2.swift; sourceTree = "<group>"; };
+		E5B5EBB824301E4A00167A1B /* DSL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSL.swift; sourceTree = "<group>"; };
 		"Flatten::Flatten::Product" /* Flatten.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Flatten.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* ParameterizedTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterizedTest.swift; sourceTree = "<group>"; };
 		OBJ_11 /* ParameterizedTestRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterizedTestRunner.swift; sourceTree = "<group>"; };
@@ -346,7 +350,7 @@
 			path = .build/checkouts/Flatten/Sources/FlattenGenLib;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -365,7 +369,6 @@
 				OBJ_64 /* Brewfile */,
 				OBJ_65 /* SwiftParamTest.podspec */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_51 /* Products */ = {
@@ -396,6 +399,8 @@
 				OBJ_10 /* ParameterizedTest.swift */,
 				OBJ_11 /* ParameterizedTestRunner.swift */,
 				OBJ_12 /* Row.swift */,
+				E56CCF11242F6378000BCE93 /* ParameterizedTestRunner2.swift */,
+				E5B5EBB824301E4A00167A1B /* DSL.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -530,7 +535,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_51 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -610,6 +615,7 @@
 				OBJ_98 /* ParameterizedTest.swift in Sources */,
 				OBJ_99 /* ParameterizedTestRunner.swift in Sources */,
 				OBJ_100 /* Row.swift in Sources */,
+				E5B5EBB924301E4A00167A1B /* DSL.swift in Sources */,
 				OBJ_101 /* CustomAssertion.swift in Sources */,
 				OBJ_102 /* Args.swift in Sources */,
 				OBJ_103 /* BasicDSLAssert.swift in Sources */,
@@ -617,6 +623,7 @@
 				OBJ_105 /* ParameterBuilder.swift in Sources */,
 				OBJ_106 /* Operator.swift in Sources */,
 				OBJ_107 /* MarkdownTable.swift in Sources */,
+				E56CCF12242F6378000BCE93 /* ParameterizedTestRunner2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
