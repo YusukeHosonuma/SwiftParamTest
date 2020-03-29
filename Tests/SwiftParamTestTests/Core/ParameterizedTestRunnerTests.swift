@@ -55,7 +55,8 @@ class CoreTests: XCTestCase {
         
         let runner = ParameterizedTestRunner2(
             runner: self,
-            header: ["x", "y"]
+            header: ["x", "y"],
+            assertion: nil
         )
         
 //        let result = runner.execute(with: rows)
@@ -80,7 +81,8 @@ class CoreTests: XCTestCase {
         
         let runner = ParameterizedTestRunner2(
             runner: self,
-            header: ["x", "y"]
+            header: ["x", "y"],
+            assertion: nil
         )
         
 //        var wrapper = RowsWrapper()

@@ -21,6 +21,12 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		E53C2DDB24307B5200B36891 /* Assertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C2DDA24307B5200B36891 /* Assertion.swift */; };
+		E53C2DDE24307BD700B36891 /* XCTAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C2DDD24307BD700B36891 /* XCTAssertion.swift */; };
+		E53C2DE124307F4700B36891 /* ThrowableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C2DE024307F4700B36891 /* ThrowableRow.swift */; };
+		E53C2DE324307FC200B36891 /* EqualRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C2DE224307FC200B36891 /* EqualRow.swift */; };
+		E53C2DE52430804D00B36891 /* ParameterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C2DE42430804D00B36891 /* ParameterRow.swift */; };
+		E53C2DE72430815F00B36891 /* AnyParameterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53C2DE62430815F00B36891 /* AnyParameterRow.swift */; };
 		E56CCF12242F6378000BCE93 /* ParameterizedTestRunner2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56CCF11242F6378000BCE93 /* ParameterizedTestRunner2.swift */; };
 		E5B5EBB924301E4A00167A1B /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B5EBB824301E4A00167A1B /* DSL.swift */; };
 		OBJ_100 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* Row.swift */; };
@@ -99,6 +105,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E53C2DDA24307B5200B36891 /* Assertion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assertion.swift; sourceTree = "<group>"; };
+		E53C2DDD24307BD700B36891 /* XCTAssertion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTAssertion.swift; sourceTree = "<group>"; };
+		E53C2DE024307F4700B36891 /* ThrowableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrowableRow.swift; sourceTree = "<group>"; };
+		E53C2DE224307FC200B36891 /* EqualRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualRow.swift; sourceTree = "<group>"; };
+		E53C2DE42430804D00B36891 /* ParameterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterRow.swift; sourceTree = "<group>"; };
+		E53C2DE62430815F00B36891 /* AnyParameterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyParameterRow.swift; sourceTree = "<group>"; };
 		E56CCF11242F6378000BCE93 /* ParameterizedTestRunner2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterizedTestRunner2.swift; sourceTree = "<group>"; };
 		E5B5EBB824301E4A00167A1B /* DSL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSL.swift; sourceTree = "<group>"; };
 		"Flatten::Flatten::Product" /* Flatten.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Flatten.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +189,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E53C2DDC24307BB600B36891 /* Assertion */ = {
+			isa = PBXGroup;
+			children = (
+				E53C2DDA24307B5200B36891 /* Assertion.swift */,
+				E53C2DDD24307BD700B36891 /* XCTAssertion.swift */,
+			);
+			path = Assertion;
+			sourceTree = "<group>";
+		};
+		E53C2DDF24307F1B00B36891 /* Row */ = {
+			isa = PBXGroup;
+			children = (
+				E53C2DE024307F4700B36891 /* ThrowableRow.swift */,
+				E53C2DE224307FC200B36891 /* EqualRow.swift */,
+				E53C2DE42430804D00B36891 /* ParameterRow.swift */,
+				OBJ_12 /* Row.swift */,
+			);
+			path = Row;
+			sourceTree = "<group>";
+		};
 		OBJ_14 /* DSL */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +233,7 @@
 			children = (
 				OBJ_19 /* FunctionBuilderDSLAssert.swift */,
 				OBJ_20 /* ParameterBuilder.swift */,
+				E53C2DE62430815F00B36891 /* AnyParameterRow.swift */,
 			);
 			path = FunctionBuilder;
 			sourceTree = "<group>";
@@ -396,9 +429,10 @@
 		OBJ_8 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E53C2DDF24307F1B00B36891 /* Row */,
+				E53C2DDC24307BB600B36891 /* Assertion */,
 				OBJ_10 /* ParameterizedTest.swift */,
 				OBJ_11 /* ParameterizedTestRunner.swift */,
-				OBJ_12 /* Row.swift */,
 				E56CCF11242F6378000BCE93 /* ParameterizedTestRunner2.swift */,
 				E5B5EBB824301E4A00167A1B /* DSL.swift */,
 			);
@@ -616,13 +650,19 @@
 				OBJ_99 /* ParameterizedTestRunner.swift in Sources */,
 				OBJ_100 /* Row.swift in Sources */,
 				E5B5EBB924301E4A00167A1B /* DSL.swift in Sources */,
+				E53C2DDE24307BD700B36891 /* XCTAssertion.swift in Sources */,
 				OBJ_101 /* CustomAssertion.swift in Sources */,
 				OBJ_102 /* Args.swift in Sources */,
+				E53C2DE72430815F00B36891 /* AnyParameterRow.swift in Sources */,
 				OBJ_103 /* BasicDSLAssert.swift in Sources */,
 				OBJ_104 /* FunctionBuilderDSLAssert.swift in Sources */,
+				E53C2DE324307FC200B36891 /* EqualRow.swift in Sources */,
 				OBJ_105 /* ParameterBuilder.swift in Sources */,
 				OBJ_106 /* Operator.swift in Sources */,
+				E53C2DE52430804D00B36891 /* ParameterRow.swift in Sources */,
 				OBJ_107 /* MarkdownTable.swift in Sources */,
+				E53C2DDB24307B5200B36891 /* Assertion.swift in Sources */,
+				E53C2DE124307F4700B36891 /* ThrowableRow.swift in Sources */,
 				E56CCF12242F6378000BCE93 /* ParameterizedTestRunner2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
