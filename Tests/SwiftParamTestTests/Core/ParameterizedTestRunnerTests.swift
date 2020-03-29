@@ -39,9 +39,9 @@ class CoreTests: XCTestCase {
     
     func test1() {
         assert2(to: div) {
-            ERow2(args: HList(1,  1), expect: 1, target: plus, file: #file, line: #line)
-//            ERow2(args: HList(1,  0), expect: 2, target: plus, file: #file, line: #line)
-            ErrorRow2(args: HList(2, 0), expectError: DivError.divByZero, target: div, file: #file, line: #line)
+            ERow2(args: HList(1,  1), expect: 2, target: plus, file: #file, line: #line)
+            ERow2(args: HList(1,  0), expect: 2, target: plus, file: #file, line: #line)
+//            ErrorRow2(args: HList(2, 0), expectError: DivError.divByZero, target: div, file: #file, line: #line)
         }
     }
     
