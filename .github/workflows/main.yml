@@ -18,7 +18,7 @@ jobs:
 
   unit-test-in-linux:
     runs-on: ubuntu-latest
-    container: swift:5.1
+    container: swift:5.4
 
     steps:
     - uses: actions/checkout@v2
