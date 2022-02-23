@@ -14,9 +14,9 @@
         "package": "SHList",
         "repositoryURL": "https://github.com/YusukeHosonuma/SHList.git",
         "state": {
-          "branch": "master",
-          "revision": "eb618555af07e637510d79e5d90dc156122dbab7",
-          "version": null
+          "branch": null,
+          "revision": "6c61f5382dd07a64d76bc8b7fad8cec0d8a4ff7a",
+          "version": "0.1.0"
         }
       }
     ]
