@@ -65,12 +65,12 @@ linux: ## Run and login docker container
 	docker run --rm -it \
 		--volume "$(CURDIR):/src" \
 		--workdir "/src" \
-		swift:5.1
+		swift:5.4
 
 .PHONY: linux-test
 linux-test: ## Run tests on linux in docker
 	docker run --rm \
 		--volume "$(CURDIR):/src" \
 		--workdir "/src" \
-		swift:5.1 \
 		swift test --enable-test-discovery
+		swift:5.4 \
