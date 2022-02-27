@@ -12,7 +12,7 @@ extension XCTestCase {
     // MARK: has 1 arguments
 
     @discardableResult
-    @available(swift 5.4)
+    @available(swift 5.1)
     public func assert<T1, R>(
         to function: @escaping (T1) -> R,
         header: [String]? = nil,
@@ -31,7 +31,7 @@ extension XCTestCase {
     // MARK: has 2 arguments
 
     @discardableResult
-    @available(swift 5.4)
+    @available(swift 5.1)
     public func assert<T1, T2, R>(
         to function: @escaping (T1, T2) -> R,
         header: [String]? = nil,
@@ -50,7 +50,7 @@ extension XCTestCase {
     // MARK: has 3 arguments
 
     @discardableResult
-    @available(swift 5.4)
+    @available(swift 5.1)
     public func assert<T1, T2, T3, R>(
         to function: @escaping (T1, T2, T3) -> R,
         header: [String]? = nil,
@@ -69,7 +69,7 @@ extension XCTestCase {
     // MARK: has 4 arguments
 
     @discardableResult
-    @available(swift 5.4)
+    @available(swift 5.1)
     public func assert<T1, T2, T3, T4, R>(
         to function: @escaping (T1, T2, T3, T4) -> R,
         header: [String]? = nil,
@@ -92,7 +92,7 @@ extension XCTestCase {
     // MARK: has no arguments
 
     @discardableResult
-    @available(swift 5.4)
+    @available(swift 5.1)
     public func assert<V, R>(
         to function: @escaping (V) -> () -> R,
         header: [String]? = nil,
@@ -111,7 +111,7 @@ extension XCTestCase {
     // MARK: has 1 arguments
 
     @discardableResult
-    @available(swift 5.4)
+    @available(swift 5.1)
     public func assert<V, T1, R>(
         to function: @escaping (V) -> (T1) -> R,
         header: [String]? = nil,
@@ -130,7 +130,7 @@ extension XCTestCase {
     // MARK: has 2 arguments
 
     @discardableResult
-    @available(swift 5.4)
+    @available(swift 5.1)
     public func assert<V, T1, T2, R>(
         to function: @escaping (V) -> (T1, T2) -> R,
         header: [String]? = nil,
@@ -149,7 +149,7 @@ extension XCTestCase {
     // MARK: has 3 arguments
 
     @discardableResult
-    @available(swift 5.4)
+    @available(swift 5.1)
     public func assert<V, T1, T2, T3, R>(
         to function: @escaping (V) -> (T1, T2, T3) -> R,
         header: [String]? = nil,
@@ -168,7 +168,7 @@ extension XCTestCase {
     // MARK: has 4 arguments
 
     @discardableResult
-    @available(swift 5.4)
+    @available(swift 5.1)
     public func assert<V, T1, T2, T3, T4, R>(
         to function: @escaping (V) -> (T1, T2, T3, T4) -> R,
         header: [String]? = nil,
