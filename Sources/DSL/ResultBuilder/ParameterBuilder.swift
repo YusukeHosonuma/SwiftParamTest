@@ -15,7 +15,6 @@ public struct ParameterBuilder1<T1, R> where R: Equatable {
     }
 }
 
-@available(swift 5.4)
 @resultBuilder
 public struct ParameterBuilder2<T1, T2, R> where R: Equatable {
     public typealias Row = Row2<T1, T2, R>
@@ -25,7 +24,6 @@ public struct ParameterBuilder2<T1, T2, R> where R: Equatable {
     }
 }
 
-@available(swift 5.4)
 @resultBuilder
 public struct ParameterBuilder3<T1, T2, T3, R> where R: Equatable {
     public typealias Row = Row3<T1, T2, T3, R>
@@ -35,7 +33,6 @@ public struct ParameterBuilder3<T1, T2, T3, R> where R: Equatable {
     }
 }
 
-@available(swift 5.4)
 @resultBuilder
 public struct ParameterBuilder4<T1, T2, T3, T4, R> where R: Equatable {
     public typealias Row = Row4<T1, T2, T3, T4, R>
@@ -45,7 +42,6 @@ public struct ParameterBuilder4<T1, T2, T3, T4, R> where R: Equatable {
     }
 }
 
-@available(swift 5.4)
 @resultBuilder
 public struct ParameterBuilder5<T1, T2, T3, T4, T5, R> where R: Equatable {
     public typealias Row = Row5<T1, T2, T3, T4, T5, R>
