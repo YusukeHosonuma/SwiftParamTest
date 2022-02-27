@@ -72,5 +72,5 @@ linux-test: ## Run tests on linux in docker
 	docker run --rm \
 		--volume "$(CURDIR):/src" \
 		--workdir "/src" \
-		swift test --enable-test-discovery
 		swift:5.4 \
+		swift test --enable-test-discovery
