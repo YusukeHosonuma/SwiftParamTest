@@ -19,7 +19,7 @@ SwiftParamTest supports two way of code-style dependent on Swift version.
 
 ### Result builders API (recommended)
 
-I recommend this API when you use Swift 5.4 or later (because this API uses Result builders).
+I recommend this API when you use Swift 5.1 or later (because this API uses Result builders or Function builders).
 
 ```swift
 assert(to: max) {
