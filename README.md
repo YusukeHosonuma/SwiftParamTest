@@ -39,7 +39,7 @@ assert(to: max) {
 
 ### Legacy API
 
-You can use array literal based API that like follwing when you use under Swift 5.4.
+You can use array literal based API that like follwing when you use under Swift 5.1.
 
 ```swift
 assert(to: max, expect: [
