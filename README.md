@@ -289,8 +289,15 @@ pod 'SwiftParamTest'
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/YusukeHosonuma/SwiftParamTest.git", from: "2.2.0"),
-]
+    .package(url: "https://github.com/YusukeHosonuma/SwiftParamTest.git", .upToNextMajor(from: "2.2.0")),
+],
+targets: [
+    .testTarget(
+        name: "YOUR_TEST_MODULE",
+        dependencies: [
+            "SwiftParamTest",
+        ]),
+],
 ```
 
 ### Carthage
